@@ -25,7 +25,7 @@ export function PricingFAQ() {
     },
     {
       question: "How do I get started?",
-      answer: "Click 'Get Started' on any package or use the contact form. We'll reply within 24 hours with a clear plan, timeline, and quote tailored to your needs.",
+      answer: "Click 'Get a Quote' on any package or use the contact form. We'll reply within 24 hours with a clear plan, timeline, and quote tailored to your needs.",
     },
   ]
 

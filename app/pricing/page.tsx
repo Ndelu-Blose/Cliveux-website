@@ -73,10 +73,10 @@ export default function PricingPage() {
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6 text-balance">Ready to get started?</h2>
             <p className="text-lg text-muted-foreground mb-8 text-pretty">
-              Schedule a quick call to discuss your project and we'll recommend the best package for your needs.
+              Get a quote tailored to your needs. We'll reply within 24 hours with a clear plan and timeline.
             </p>
-            <Button size="lg" className="text-base">
-              Schedule a Call
+            <Button size="lg" className="text-base" asChild>
+              <a href="#contact">Get a Quote</a>
             </Button>
           </div>
         </section>

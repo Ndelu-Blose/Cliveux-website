@@ -144,7 +144,7 @@ export function Packages() {
                 variant={pkg.popular ? "default" : "outline"}
                 onClick={() => handleGetStarted(pkg.number)}
               >
-                Get Started
+                Get a Quote
               </Button>
             </Card>
           ))}

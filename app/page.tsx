@@ -7,6 +7,8 @@ import { PricingFAQ } from "@/components/pricing-faq"
 import { SocialProof } from "@/components/social-proof"
 import { Approach } from "@/components/approach"
 import { Experience } from "@/components/experience"
+import { ContactCard } from "@/components/contact-card"
+import { Testimonials } from "@/components/testimonials"
 import { CTA } from "@/components/cta"
 import { Footer } from "@/components/footer"
 
@@ -21,8 +23,10 @@ export default function Home() {
         <Packages />
         <PricingFAQ />
         <SocialProof />
+        <Testimonials />
         <Approach />
         <Experience />
+        <ContactCard />
         <CTA />
       </main>
       <Footer />

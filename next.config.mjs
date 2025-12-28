@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false, // Enable build-time type checking
   },
   images: {
-    unoptimized: true,
+    unoptimized: false, // Enable Next.js image optimization for Vercel
+    formats: ['image/avif', 'image/webp'],
   },
 }
 

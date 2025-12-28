@@ -27,11 +27,12 @@ export function CTA() {
                 size="lg" 
                 onClick={() => setOpen(true)}
                 className="bg-foreground text-background hover:bg-foreground/90 h-12 px-8"
+                aria-label="Get a quote - opens contact modal"
               >
-                Start a Conversation
+                Get a Quote
               </Button>
               <Button size="lg" variant="outline" asChild className="h-12 px-8 bg-transparent">
-                <Link href="#services">View Packages</Link>
+                <Link href="#packages" aria-label="View packages section">View Packages</Link>
               </Button>
             </div>
 
