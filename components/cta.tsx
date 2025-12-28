@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import Link from "next/link"
 import ContactModal from "@/components/ContactModal"
+import { AnimateOnScroll } from "@/components/animate-on-scroll"
 
 export function CTA() {
   const [open, setOpen] = useState(false);
@@ -13,7 +14,8 @@ export function CTA() {
     <>
       <section id="contact" className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
-          <Card className="p-6 sm:p-8 md:p-12 lg:p-16 text-center border-2">
+          <AnimateOnScroll direction="up">
+            <Card className="p-6 sm:p-8 md:p-12 lg:p-16 text-center border-2">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light tracking-tight mb-4 sm:mb-6 text-balance">
               Ready to build something
               <span className="block text-accent font-normal">professional & powerful?</span>
@@ -37,7 +39,8 @@ export function CTA() {
             </div>
 
             <p className="text-sm text-muted-foreground">Typical response time: 24 hours or less</p>
-          </Card>
+            </Card>
+          </AnimateOnScroll>
         </div>
       </section>
 

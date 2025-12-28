@@ -1,5 +1,8 @@
+"use client";
+
 import { Card } from "@/components/ui/card"
 import { Check, X } from "lucide-react"
+import { AnimateOnScroll } from "@/components/animate-on-scroll"
 
 export function PreQualification() {
   const goodFit = [
@@ -17,18 +20,21 @@ export function PreQualification() {
   return (
     <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-10 sm:mb-12 max-w-2xl">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight mb-4 sm:mb-6 text-balance">
-            Who this is
-            <span className="block text-accent font-normal">for (and not for)</span>
-          </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            We work best with businesses that value quality, clear communication, and long-term growth.
-          </p>
-        </div>
+        <AnimateOnScroll direction="up">
+          <div className="mb-10 sm:mb-12 max-w-2xl">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight mb-4 sm:mb-6 text-balance">
+              Who this is
+              <span className="block text-accent font-normal">for (and not for)</span>
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              We work best with businesses that value quality, clear communication, and long-term growth.
+            </p>
+          </div>
+        </AnimateOnScroll>
 
         <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
-          <Card className="p-6 sm:p-8 border-2 border-accent/20 bg-accent/5">
+          <AnimateOnScroll direction="right" delay={100}>
+            <Card className="p-6 sm:p-8 border-2 border-accent/20 bg-accent/5">
             <div className="flex items-center gap-3 mb-6">
               <div className="h-10 w-10 rounded-full bg-accent/20 flex items-center justify-center">
                 <Check className="h-5 w-5 text-accent" />
@@ -43,9 +49,11 @@ export function PreQualification() {
                 </li>
               ))}
             </ul>
-          </Card>
+            </Card>
+          </AnimateOnScroll>
 
-          <Card className="p-6 sm:p-8 border-2 border-border">
+          <AnimateOnScroll direction="left" delay={200}>
+            <Card className="p-6 sm:p-8 border-2 border-border">
             <div className="flex items-center gap-3 mb-6">
               <div className="h-10 w-10 rounded-full bg-muted flex items-center justify-center">
                 <X className="h-5 w-5 text-muted-foreground" />
@@ -60,7 +68,8 @@ export function PreQualification() {
                 </li>
               ))}
             </ul>
-          </Card>
+            </Card>
+          </AnimateOnScroll>
         </div>
       </div>
     </section>

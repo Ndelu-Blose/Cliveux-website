@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
 import ContactModal from "@/components/ContactModal"
+import { AnimateOnScroll } from "@/components/animate-on-scroll"
 import type { PackageKey } from "@/content/packages"
 
 const packages = [
@@ -102,23 +103,25 @@ export function Packages() {
     <>
       <section id="packages" className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-12 sm:mb-16 max-w-2xl">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight mb-4 sm:mb-6 text-balance">
-            Choose your
-            <span className="block text-accent font-normal">package</span>
-          </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Clear pricing, fast delivery, and everything you need to get online. All packages include hosting and domain
-            management.
-          </p>
-        </div>
+        <AnimateOnScroll direction="up">
+          <div className="mb-12 sm:mb-16 max-w-2xl">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight mb-4 sm:mb-6 text-balance">
+              Choose your
+              <span className="block text-accent font-normal">package</span>
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Clear pricing, fast delivery, and everything you need to get online. All packages include hosting and domain
+              management.
+            </p>
+          </div>
+        </AnimateOnScroll>
 
         <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12">
-          {packages.map((pkg) => (
-            <Card
-              key={pkg.number}
-              className={`p-8 relative ${pkg.popular ? "border-accent border-2" : "hover:border-accent/50"} transition-colors`}
-            >
+          {packages.map((pkg, index) => (
+            <AnimateOnScroll key={pkg.number} direction="up" delay={index * 100}>
+              <Card
+                className={`p-8 relative ${pkg.popular ? "border-accent border-2" : "hover:border-accent/50"} transition-all duration-300 hover:shadow-lg`}
+              >
               {pkg.popular && (
                 <div className="absolute -top-3 left-8 bg-accent text-background px-4 py-1 text-xs font-semibold rounded-full">
                   Most Popular
@@ -146,12 +149,14 @@ export function Packages() {
               >
                 Get a Quote
               </Button>
-            </Card>
+              </Card>
+            </AnimateOnScroll>
           ))}
         </div>
 
         {/* Important Note */}
-        <div className="bg-accent/5 border border-accent/20 rounded-lg p-6 mb-12">
+        <AnimateOnScroll direction="up" delay={400}>
+          <div className="bg-accent/5 border border-accent/20 rounded-lg p-6 mb-12">
           <h4 className="font-semibold mb-2 flex items-center gap-2">
             <Check className="h-5 w-5 text-accent" />
             Included in ALL packages
@@ -161,10 +166,12 @@ export function Packages() {
             <p>✓ Security basics + SSL</p>
             <p>✓ Support channel for handover</p>
           </div>
-        </div>
+          </div>
+        </AnimateOnScroll>
 
         {/* Add-ons */}
-        <div className="max-w-3xl">
+        <AnimateOnScroll direction="up" delay={500}>
+          <div className="max-w-3xl">
           <h3 className="text-2xl font-semibold mb-4">Add-ons</h3>
           <p className="text-sm text-muted-foreground mb-6">Choose anytime to enhance your package</p>
           <div className="grid sm:grid-cols-2 gap-3">
@@ -175,7 +182,8 @@ export function Packages() {
               </div>
             ))}
           </div>
-        </div>
+          </div>
+        </AnimateOnScroll>
       </div>
     </section>
     <ContactModal open={open} onClose={() => setOpen(false)} defaultPackage={selectedPackage} />

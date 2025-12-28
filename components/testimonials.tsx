@@ -1,4 +1,7 @@
+"use client";
+
 import { Card } from "@/components/ui/card";
+import { AnimateOnScroll } from "@/components/animate-on-scroll";
 
 const testimonials = [
   {
@@ -25,19 +28,22 @@ export function Testimonials() {
   return (
     <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-10 sm:mb-12 text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight mb-4 sm:mb-6 text-balance">
-            Trusted by
-            <span className="block text-accent font-normal">growing businesses</span>
-          </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            See what our clients say about working with CliveUX.
-          </p>
-        </div>
+        <AnimateOnScroll direction="up">
+          <div className="mb-10 sm:mb-12 text-center max-w-2xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight mb-4 sm:mb-6 text-balance">
+              Trusted by
+              <span className="block text-accent font-normal">growing businesses</span>
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              See what our clients say about working with CliveUX.
+            </p>
+          </div>
+        </AnimateOnScroll>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="p-6 md:p-8 hover:border-accent/50 transition-colors">
+            <AnimateOnScroll key={index} direction="up" delay={index * 100}>
+              <Card className="p-6 md:p-8 hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
               <blockquote className="text-base md:text-lg leading-relaxed mb-6 text-muted-foreground">
                 "{testimonial.quote}"
               </blockquote>
@@ -47,7 +53,8 @@ export function Testimonials() {
                   {testimonial.company} • {testimonial.location}
                 </div>
               </div>
-            </Card>
+              </Card>
+            </AnimateOnScroll>
           ))}
         </div>
       </div>
