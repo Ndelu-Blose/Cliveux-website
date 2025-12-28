@@ -1,0 +1,628 @@
+module.exports = [
+"[project]/Desktop/CliveUx/cliveux website/lib/utils.ts [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "cn",
+    ()=>cn
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$clsx$2f$dist$2f$clsx$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/CliveUx/cliveux website/node_modules/clsx/dist/clsx.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$tailwind$2d$merge$2f$dist$2f$bundle$2d$mjs$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/CliveUx/cliveux website/node_modules/tailwind-merge/dist/bundle-mjs.mjs [app-ssr] (ecmascript)");
+;
+;
+function cn(...inputs) {
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$tailwind$2d$merge$2f$dist$2f$bundle$2d$mjs$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["twMerge"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$clsx$2f$dist$2f$clsx$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["clsx"])(inputs));
+}
+}),
+"[project]/Desktop/CliveUx/cliveux website/components/ui/button.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Button",
+    ()=>Button,
+    "buttonVariants",
+    ()=>buttonVariants
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/CliveUx/cliveux website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f40$radix$2d$ui$2f$react$2d$slot$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/CliveUx/cliveux website/node_modules/@radix-ui/react-slot/dist/index.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$class$2d$variance$2d$authority$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/CliveUx/cliveux website/node_modules/class-variance-authority/dist/index.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/CliveUx/cliveux website/lib/utils.ts [app-ssr] (ecmascript)");
+;
+;
+;
+;
+const buttonVariants = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$class$2d$variance$2d$authority$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cva"])("inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive", {
+    variants: {
+        variant: {
+            default: 'bg-primary text-primary-foreground hover:bg-primary/90',
+            destructive: 'bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60',
+            outline: 'border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50',
+            secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
+            ghost: 'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
+            link: 'text-primary underline-offset-4 hover:underline'
+        },
+        size: {
+            default: 'h-9 px-4 py-2 has-[>svg]:px-3',
+            sm: 'h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5',
+            lg: 'h-10 rounded-md px-6 has-[>svg]:px-4',
+            icon: 'size-9',
+            'icon-sm': 'size-8',
+            'icon-lg': 'size-10'
+        }
+    },
+    defaultVariants: {
+        variant: 'default',
+        size: 'default'
+    }
+});
+function Button({ className, variant, size, asChild = false, ...props }) {
+    const Comp = asChild ? __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f40$radix$2d$ui$2f$react$2d$slot$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Slot"] : 'button';
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Comp, {
+        "data-slot": "button",
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])(buttonVariants({
+            variant,
+            size,
+            className
+        })),
+        ...props
+    }, void 0, false, {
+        fileName: "[project]/Desktop/CliveUx/cliveux website/components/ui/button.tsx",
+        lineNumber: 52,
+        columnNumber: 5
+    }, this);
+}
+;
+}),
+"[project]/Desktop/CliveUx/cliveux website/content/packages.ts [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "packages",
+    ()=>packages
+]);
+const packages = [
+    {
+        key: "Package 1",
+        title: "Starter Website",
+        forWho: "For new businesses that need a clean online presence fast."
+    },
+    {
+        key: "Package 2",
+        title: "Business Website",
+        forWho: "For growing businesses that need credibility + lead generation."
+    },
+    {
+        key: "Package 3",
+        title: "Pro Website + Growth",
+        forWho: "For brands that need advanced features + marketing readiness."
+    },
+    {
+        key: "Package 4",
+        title: "Business System / Custom Web App",
+        forWho: "For automation (bookings, tracking, dashboards, CRM-lite)."
+    }
+];
+}),
+"[project]/Desktop/CliveUx/cliveux website/lib/analytics.ts [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "track",
+    ()=>track
+]);
+function track(event, props) {
+    // Works now (console), and later you can swap to GA/Meta without changing components
+    try {
+        // eslint-disable-next-line no-console
+        console.log("[track]", event, props ?? {});
+    } catch  {}
+    // Optional: Google Analytics (gtag)
+    // @ts-ignore
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
+}
+}),
+"[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>ContactModal
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/CliveUx/cliveux website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/CliveUx/cliveux website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$content$2f$packages$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/CliveUx/cliveux website/content/packages.ts [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$lib$2f$analytics$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/CliveUx/cliveux website/lib/analytics.ts [app-ssr] (ecmascript)");
+"use client";
+;
+;
+;
+;
+const WHATSAPP = "27607257297";
+const EMAIL = "cliveuxweb@gmail.com";
+function ContactModal({ open, onClose, defaultPackage }) {
+    const [pkg, setPkg] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(defaultPackage ?? "Package 2");
+    const [name, setName] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
+    const [need, setNeed] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        if (open) {
+            // reset to default each time (optional)
+            setPkg(defaultPackage ?? "Package 2");
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$lib$2f$analytics$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["track"])("contact_modal_open", {
+                defaultPackage: defaultPackage ?? null
+            });
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [
+        open
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        function onKeyDown(e) {
+            if (e.key === "Escape") onClose();
+        }
+        if (open) document.addEventListener("keydown", onKeyDown);
+        return ()=>document.removeEventListener("keydown", onKeyDown);
+    }, [
+        open,
+        onClose
+    ]);
+    const selected = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$content$2f$packages$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["packages"].find((p)=>p.key === pkg), [
+        pkg
+    ]);
+    const waMessage = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>{
+        const who = name.trim() ? `Name: ${name.trim()}\n` : "";
+        const what = need.trim() ? `Need: ${need.trim()}\n` : "";
+        return encodeURIComponent(`Hi CliveUX 👋\n\nI'd like a quote.\n\nPackage: ${pkg} — ${selected?.title ?? ""}\n${who}${what}\nHosting + domain management included.\n\nPlease advise next steps.`);
+    }, [
+        pkg,
+        selected?.title,
+        name,
+        need
+    ]);
+    if (!open) return null;
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "fixed inset-0 z-[60]",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                "aria-label": "Close contact options",
+                onClick: ()=>{
+                    (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$lib$2f$analytics$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["track"])("contact_modal_close_backdrop");
+                    onClose();
+                },
+                className: "absolute inset-0 bg-black/40"
+            }, void 0, false, {
+                fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                lineNumber: 56,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "relative mx-auto mt-16 w-[92%] max-w-2xl rounded-2xl bg-white shadow-xl border border-[rgb(var(--border))]",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "p-6 md:p-8",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex items-start justify-between gap-4",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "text-xs font-medium text-[rgb(var(--muted))]",
+                                            children: "Contact CliveUX"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                            lineNumber: 70,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                            className: "mt-1 text-2xl font-semibold tracking-tight",
+                                            children: "Choose WhatsApp or Email"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                            lineNumber: 73,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "mt-2 text-sm text-[rgb(var(--muted))]",
+                                            children: "Select a package to speed up your quote. (You can change it.)"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                            lineNumber: 76,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                    lineNumber: 69,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    onClick: ()=>{
+                                        (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$lib$2f$analytics$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["track"])("contact_modal_close_button");
+                                        onClose();
+                                    },
+                                    className: "rounded-lg px-3 py-2 text-sm border border-[rgb(var(--border))] hover:bg-black/5",
+                                    children: "Close"
+                                }, void 0, false, {
+                                    fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                    lineNumber: 81,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                            lineNumber: 68,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "mt-6",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-sm font-medium",
+                                    children: "Preferred package"
+                                }, void 0, false, {
+                                    fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                    lineNumber: 94,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "mt-3 grid gap-2 md:grid-cols-2",
+                                    children: __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$content$2f$packages$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["packages"].map((p)=>{
+                                        const active = p.key === pkg;
+                                        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                            onClick: ()=>{
+                                                setPkg(p.key);
+                                                (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$lib$2f$analytics$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["track"])("package_select", {
+                                                    package: p.key
+                                                });
+                                            },
+                                            className: [
+                                                "text-left rounded-xl border p-4 transition",
+                                                active ? "border-black bg-black/[0.03]" : "border-[rgb(var(--border))] hover:border-black"
+                                            ].join(" "),
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "flex items-center justify-between",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                            className: "text-sm font-semibold",
+                                                            children: p.key
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                                            lineNumber: 113,
+                                                            columnNumber: 23
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "text-xs font-medium text-[rgb(var(--gold))]",
+                                                            children: p.title
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                                            lineNumber: 114,
+                                                            columnNumber: 23
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                                    lineNumber: 112,
+                                                    columnNumber: 21
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "mt-2 text-sm text-[rgb(var(--muted))]",
+                                                    children: p.forWho
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                                    lineNumber: 118,
+                                                    columnNumber: 21
+                                                }, this)
+                                            ]
+                                        }, p.key, true, {
+                                            fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                            lineNumber: 99,
+                                            columnNumber: 19
+                                        }, this);
+                                    })
+                                }, void 0, false, {
+                                    fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                    lineNumber: 95,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "mt-4 grid gap-3 md:grid-cols-2",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                            value: name,
+                                            onChange: (e)=>setName(e.target.value),
+                                            placeholder: "Your name (optional)",
+                                            className: "h-11 rounded-lg border border-[rgb(var(--border))] px-3 text-sm outline-none focus:border-black"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                            lineNumber: 127,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                            value: need,
+                                            onChange: (e)=>setNeed(e.target.value),
+                                            placeholder: "What do you need? (optional)",
+                                            className: "h-11 rounded-lg border border-[rgb(var(--border))] px-3 text-sm outline-none focus:border-black"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                            lineNumber: 133,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                    lineNumber: 126,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                            lineNumber: 93,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "mt-6 grid gap-3",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                    href: `https://wa.me/${WHATSAPP}?text=${waMessage}`,
+                                    target: "_blank",
+                                    rel: "noreferrer",
+                                    onClick: ()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$lib$2f$analytics$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["track"])("contact_whatsapp_click", {
+                                            package: pkg
+                                        }),
+                                    className: "rounded-xl border border-[rgb(var(--border))] p-4 hover:border-black transition",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex items-center justify-between",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-sm font-semibold",
+                                                        children: "WhatsApp"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                                        lineNumber: 154,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-sm text-[rgb(var(--muted))]",
+                                                        children: "Chat instantly (fastest)"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                                        lineNumber: 155,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                                lineNumber: 153,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-sm font-medium text-[rgb(var(--gold))]",
+                                                children: "Open →"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                                lineNumber: 159,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                        lineNumber: 152,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                    lineNumber: 145,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                    href: `mailto:${EMAIL}?subject=${encodeURIComponent(`Quote request — ${pkg}`)}&body=${encodeURIComponent(`Hi CliveUX,\n\nI'd like a quote.\n\nPackage: ${pkg} — ${selected?.title ?? ""}\nName: ${name || "—"}\nNeed: ${need || "—"}\n\nHosting + domain management included.\n\nThanks,`)}`,
+                                    onClick: ()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$lib$2f$analytics$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["track"])("contact_email_click", {
+                                            package: pkg
+                                        }),
+                                    className: "rounded-xl border border-[rgb(var(--border))] p-4 hover:border-black transition",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex items-center justify-between",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-sm font-semibold",
+                                                        children: "Email"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                                        lineNumber: 179,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-sm text-[rgb(var(--muted))]",
+                                                        children: "Best for detailed requests"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                                        lineNumber: 180,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                                lineNumber: 178,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-sm font-medium text-[rgb(var(--gold))]",
+                                                children: "Compose →"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                                lineNumber: 184,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                        lineNumber: 177,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                                    lineNumber: 166,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                            lineNumber: 143,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "mt-4 text-xs text-[rgb(var(--muted))]",
+                            children: "Typical response time: 24 hours or less"
+                        }, void 0, false, {
+                            fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                            lineNumber: 191,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                    lineNumber: 67,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+                lineNumber: 66,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx",
+        lineNumber: 54,
+        columnNumber: 5
+    }, this);
+}
+}),
+"[project]/Desktop/CliveUx/cliveux website/components/header.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Header",
+    ()=>Header
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/CliveUx/cliveux website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/CliveUx/cliveux website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/CliveUx/cliveux website/node_modules/next/dist/client/app-dir/link.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/CliveUx/cliveux website/components/ui/button.tsx [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$components$2f$ContactModal$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/CliveUx/cliveux website/components/ContactModal.tsx [app-ssr] (ecmascript)");
+"use client";
+;
+;
+;
+;
+;
+function Header() {
+    const [open, setOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
+                className: "fixed top-0 left-0 right-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-sm",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "mx-auto max-w-7xl px-6 lg:px-8",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex h-16 items-center justify-between",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                href: "/",
+                                className: "text-xl font-semibold tracking-tight",
+                                children: "CliveUX"
+                            }, void 0, false, {
+                                fileName: "[project]/Desktop/CliveUx/cliveux website/components/header.tsx",
+                                lineNumber: 16,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
+                                className: "hidden md:flex items-center gap-8",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                        href: "#services",
+                                        className: "text-sm text-muted-foreground hover:text-foreground transition-colors",
+                                        children: "Services"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/CliveUx/cliveux website/components/header.tsx",
+                                        lineNumber: 21,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                        href: "#approach",
+                                        className: "text-sm text-muted-foreground hover:text-foreground transition-colors",
+                                        children: "Approach"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/CliveUx/cliveux website/components/header.tsx",
+                                        lineNumber: 24,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                        href: "#experience",
+                                        className: "text-sm text-muted-foreground hover:text-foreground transition-colors",
+                                        children: "Experience"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/CliveUx/cliveux website/components/header.tsx",
+                                        lineNumber: 27,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                        href: "#contact",
+                                        className: "text-sm text-muted-foreground hover:text-foreground transition-colors",
+                                        children: "Contact"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/CliveUx/cliveux website/components/header.tsx",
+                                        lineNumber: 30,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/Desktop/CliveUx/cliveux website/components/header.tsx",
+                                lineNumber: 20,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                                onClick: ()=>setOpen(true),
+                                className: "bg-foreground text-background hover:bg-foreground/90",
+                                children: "Get Started"
+                            }, void 0, false, {
+                                fileName: "[project]/Desktop/CliveUx/cliveux website/components/header.tsx",
+                                lineNumber: 35,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/Desktop/CliveUx/cliveux website/components/header.tsx",
+                        lineNumber: 15,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/Desktop/CliveUx/cliveux website/components/header.tsx",
+                    lineNumber: 14,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/Desktop/CliveUx/cliveux website/components/header.tsx",
+                lineNumber: 13,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$CliveUx$2f$cliveux__website$2f$components$2f$ContactModal$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                open: open,
+                onClose: ()=>setOpen(false),
+                defaultPackage: "Package 2"
+            }, void 0, false, {
+                fileName: "[project]/Desktop/CliveUx/cliveux website/components/header.tsx",
+                lineNumber: 45,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true);
+}
+}),
+];
+
+//# sourceMappingURL=Desktop_CliveUx_cliveux%20website_a4848790._.js.map
