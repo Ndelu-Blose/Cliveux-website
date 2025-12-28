@@ -6,6 +6,7 @@ import ContactModal from "@/components/ContactModal"
 import { MessageCircle, Instagram, Facebook } from "lucide-react"
 
 const WHATSAPP = "27607257297";
+const EMAIL = "cliveuxweb@gmail.com";
 const INSTAGRAM = "https://www.instagram.com/cliveuxweb/";
 const FACEBOOK = "https://www.facebook.com/share/17aXXGqeur/";
 
@@ -84,7 +85,7 @@ export function Footer() {
             <h3 className="font-semibold mb-4 text-sm">Connect</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <a href="mailto:hello@clive-ux.com" className="hover:text-foreground transition-colors">
+                <a href={`mailto:${EMAIL}`} className="hover:text-foreground transition-colors">
                   Email
                 </a>
               </li>
@@ -99,10 +100,18 @@ export function Footer() {
           </div>
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
             <div className="flex gap-4 sm:gap-6">
-              <Link href="/privacy" className="hover:text-foreground transition-colors">
+              <Link 
+                href="/privacy" 
+                className="hover:text-foreground transition-colors"
+                prefetch={true}
+              >
                 Privacy
               </Link>
-              <Link href="/terms" className="hover:text-foreground transition-colors">
+              <Link 
+                href="/terms" 
+                className="hover:text-foreground transition-colors"
+                prefetch={true}
+              >
                 Terms
               </Link>
             </div>
