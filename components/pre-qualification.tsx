@@ -15,10 +15,10 @@ export function PreQualification() {
   ]
 
   return (
-    <section className="py-20 md:py-28 px-6 lg:px-8">
+    <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-12 max-w-2xl">
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6 text-balance">
+        <div className="mb-10 sm:mb-12 max-w-2xl">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight mb-4 sm:mb-6 text-balance">
             Who this is
             <span className="block text-accent font-normal">for (and not for)</span>
           </h2>
@@ -27,8 +27,8 @@ export function PreQualification() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          <Card className="p-8 border-2 border-accent/20 bg-accent/5">
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
+          <Card className="p-6 sm:p-8 border-2 border-accent/20 bg-accent/5">
             <div className="flex items-center gap-3 mb-6">
               <div className="h-10 w-10 rounded-full bg-accent/20 flex items-center justify-center">
                 <Check className="h-5 w-5 text-accent" />
@@ -45,7 +45,7 @@ export function PreQualification() {
             </ul>
           </Card>
 
-          <Card className="p-8 border-2 border-border">
+          <Card className="p-6 sm:p-8 border-2 border-border">
             <div className="flex items-center gap-3 mb-6">
               <div className="h-10 w-10 rounded-full bg-muted flex items-center justify-center">
                 <X className="h-5 w-5 text-muted-foreground" />

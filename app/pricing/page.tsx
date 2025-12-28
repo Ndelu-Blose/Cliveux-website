@@ -14,13 +14,13 @@ export default function PricingPage() {
     <>
       <Header />
       <main>
-        <section className="py-20 md:py-28 px-6 lg:px-8">
+        <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight mb-6 text-balance">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-light tracking-tight mb-4 sm:mb-6 text-balance">
               Transparent pricing.
               <span className="block text-accent font-normal">Fast delivery.</span>
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed mb-8 text-pretty">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed mb-6 sm:mb-8 text-pretty px-2">
               Every package includes hosting, domain management, and post-launch support. No hidden fees, no surprises.
             </p>
             <Button size="lg" className="text-base">
@@ -32,9 +32,9 @@ export default function PricingPage() {
         <Packages />
 
         {/* FAQ / Additional Info */}
-        <section className="py-24 px-6 lg:px-8 bg-secondary/30">
+        <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-secondary/30">
           <div className="mx-auto max-w-3xl">
-            <h2 className="text-3xl font-semibold mb-12 text-center">Common Questions</h2>
+            <h2 className="text-2xl sm:text-3xl font-semibold mb-8 sm:mb-12 text-center">Common Questions</h2>
             <div className="space-y-8">
               <div>
                 <h3 className="text-lg font-semibold mb-2">How does payment work?</h3>
@@ -69,9 +69,9 @@ export default function PricingPage() {
         </section>
 
         {/* Final CTA */}
-        <section className="py-24 md:py-32 px-6 lg:px-8">
+        <section className="py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6 text-balance">Ready to get started?</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight mb-4 sm:mb-6 text-balance">Ready to get started?</h2>
             <p className="text-lg text-muted-foreground mb-8 text-pretty">
               Get a quote tailored to your needs. We'll reply within 24 hours with a clear plan and timeline.
             </p>

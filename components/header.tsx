@@ -3,15 +3,26 @@
 import { useState } from "react";
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { Menu, X } from "lucide-react"
 import ContactModal from "@/components/ContactModal"
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetDescription,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet"
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-sm">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <Link href="/" className="text-xl font-semibold tracking-tight focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 rounded" aria-label="CliveUX Home">
               CliveUX
@@ -32,13 +43,81 @@ export function Header() {
               </Link>
             </nav>
 
-            <Button 
-              onClick={() => setOpen(true)}
-              className="bg-foreground text-background hover:bg-foreground/90"
-              aria-label="Get a quote - opens contact modal"
-            >
-              Get a Quote
-            </Button>
+            <div className="flex items-center gap-4">
+              <Button 
+                onClick={() => setOpen(true)}
+                className="hidden sm:flex bg-foreground text-background hover:bg-foreground/90"
+                aria-label="Get a quote - opens contact modal"
+              >
+                Get a Quote
+              </Button>
+
+              <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                <SheetTrigger asChild className="md:hidden">
+                  <Button variant="ghost" size="icon" aria-label="Open mobile menu">
+                    <Menu className="h-6 w-6" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                  <SheetHeader>
+                    <SheetTitle>Menu</SheetTitle>
+                    <SheetDescription className="sr-only">
+                      Navigation menu for mobile devices
+                    </SheetDescription>
+                  </SheetHeader>
+                  <nav className="flex flex-col gap-4 mt-8">
+                    <SheetClose asChild>
+                      <Link 
+                        href="#services" 
+                        className="text-base font-medium text-foreground hover:text-accent transition-colors py-2"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        Services
+                      </Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link 
+                        href="#approach" 
+                        className="text-base font-medium text-foreground hover:text-accent transition-colors py-2"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        Approach
+                      </Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link 
+                        href="#experience" 
+                        className="text-base font-medium text-foreground hover:text-accent transition-colors py-2"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        Experience
+                      </Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link 
+                        href="#contact" 
+                        className="text-base font-medium text-foreground hover:text-accent transition-colors py-2"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        Contact
+                      </Link>
+                    </SheetClose>
+                    <div className="pt-4 border-t border-border mt-4">
+                      <Button 
+                        onClick={() => {
+                          setMobileMenuOpen(false);
+                          setOpen(true);
+                        }}
+                        className="w-full bg-foreground text-background hover:bg-foreground/90"
+                        aria-label="Get a quote - opens contact modal"
+                      >
+                        Get a Quote
+                      </Button>
+                    </div>
+                  </nav>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
       </header>

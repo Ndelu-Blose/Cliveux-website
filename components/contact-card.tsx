@@ -8,10 +8,10 @@ const EMAIL = "cliveuxweb@gmail.com";
 
 export function ContactCard() {
   return (
-    <section className="py-20 md:py-28 px-6 lg:px-8 bg-secondary/30">
+    <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-secondary/30">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-12 text-center max-w-2xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6 text-balance">
+        <div className="mb-10 sm:mb-12 text-center max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight mb-4 sm:mb-6 text-balance">
             Get in touch
             <span className="block text-accent font-normal">We're here to help</span>
           </h2>
@@ -20,7 +20,7 @@ export function ContactCard() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {/* WhatsApp */}
           <Card className="p-6 text-center hover:border-accent/50 transition-colors">
             <div className="mb-4 flex justify-center">

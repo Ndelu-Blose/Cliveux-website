@@ -23,10 +23,10 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="py-20 md:py-28 px-6 lg:px-8">
+    <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-12 text-center max-w-2xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6 text-balance">
+        <div className="mb-10 sm:mb-12 text-center max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight mb-4 sm:mb-6 text-balance">
             Trusted by
             <span className="block text-accent font-normal">growing businesses</span>
           </h2>
@@ -35,7 +35,7 @@ export function Testimonials() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="p-6 md:p-8 hover:border-accent/50 transition-colors">
               <blockquote className="text-base md:text-lg leading-relaxed mb-6 text-muted-foreground">

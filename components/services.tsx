@@ -34,10 +34,10 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="py-20 md:py-28 px-6 lg:px-8 bg-secondary/30">
+    <section id="services" className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-secondary/30">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-16 max-w-2xl">
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6 text-balance">
+        <div className="mb-12 sm:mb-16 max-w-2xl">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight mb-4 sm:mb-6 text-balance">
             Services that solve
             <span className="block text-accent font-normal">real problems</span>
           </h2>

@@ -15,9 +15,9 @@ export function Footer() {
 
   return (
     <>
-      <footer className="border-t border-border py-12 px-6 lg:px-8">
+      <footer className="border-t border-border py-12 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="grid md:grid-cols-4 gap-8 mb-12">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12">
             <div>
               <div className="text-xl font-semibold mb-4">CliveUX</div>
               <p className="text-sm text-muted-foreground leading-relaxed">
@@ -92,13 +92,13 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-          <div className="flex flex-col gap-2">
+        <div className="pt-6 sm:pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
+          <div className="flex flex-col gap-2 text-center md:text-left">
             <p>&copy; {currentYear} CliveUX. All rights reserved.</p>
             <p className="text-xs">Based in South Africa, working with local & growing businesses</p>
           </div>
-          <div className="flex items-center gap-6">
-            <div className="flex gap-6">
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+            <div className="flex gap-4 sm:gap-6">
               <Link href="/privacy" className="hover:text-foreground transition-colors">
                 Privacy
               </Link>

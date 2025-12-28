@@ -27,10 +27,10 @@ const expertise = [
 
 export function Experience() {
   return (
-    <section id="experience" className="py-24 md:py-32 px-6 lg:px-8 bg-secondary/30">
+    <section id="experience" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-secondary/30">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-16 max-w-2xl">
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6 text-balance">
+        <div className="mb-12 sm:mb-16 max-w-2xl">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight mb-4 sm:mb-6 text-balance">
             Experience across
             <span className="block text-accent font-normal">business & growth</span>
           </h2>
@@ -39,7 +39,7 @@ export function Experience() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-12">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 mb-8 sm:mb-12">
           <div>
             <h3 className="text-xl font-semibold mb-6">Industries</h3>
             <div className="space-y-4">
@@ -68,9 +68,9 @@ export function Experience() {
           </div>
         </div>
 
-        <Card className="p-8 md:p-12 bg-foreground text-background border-foreground">
+        <Card className="p-6 sm:p-8 md:p-12 bg-foreground text-background border-foreground">
           <div className="max-w-3xl">
-            <blockquote className="text-2xl md:text-3xl font-light leading-relaxed mb-6">
+            <blockquote className="text-xl sm:text-2xl md:text-3xl font-light leading-relaxed mb-4 sm:mb-6">
               "The best solutions feel simple — because the complexity is handled behind the scenes."
             </blockquote>
             <div className="text-sm opacity-80">— CliveUX Approach</div>
