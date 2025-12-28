@@ -43,7 +43,9 @@ export const metadata: Metadata = {
       "We design and develop websites, business systems, and automations that help teams move faster, look professional, and grow.",
     images: [
       {
-        url: "/og-image.png",
+        // TODO: Create a proper 1200x630px OG image for social sharing
+        // Currently using logo as fallback - replace with optimized og-image.png
+        url: "/cliveux logo Black.png",
         width: 1200,
         height: 630,
         alt: "CliveUX - Digital Innovation Studio",
@@ -55,7 +57,8 @@ export const metadata: Metadata = {
     title: "CliveUX - Digital Innovation Studio",
     description:
       "We design and develop websites, business systems, and automations that help teams move faster, look professional, and grow.",
-    images: ["/og-image.png"],
+    // TODO: Replace with proper og-image.png (1200x630px) for optimal social sharing
+    images: ["/cliveux logo Black.png"],
   },
   robots: {
     index: true,
