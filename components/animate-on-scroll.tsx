@@ -65,7 +65,7 @@ export function AnimateOnScroll({
     <div
       ref={ref}
       className={cn(
-        "transition-all duration-700 ease-out",
+        "transition-all ease-out",
         directionClasses[direction],
         className
       )}
