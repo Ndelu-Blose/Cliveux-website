@@ -1,15 +1,15 @@
+"use client";
+
+import { useState } from "react";
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Packages } from "@/components/packages"
 import { Button } from "@/components/ui/button"
-
-export const metadata = {
-  title: "Pricing & Packages | CliveUX",
-  description:
-    "Clear pricing for web development, software systems, and digital solutions. From starter websites to custom web apps with hosting included.",
-}
+import ContactModal from "@/components/ContactModal"
 
 export default function PricingPage() {
+  const [open, setOpen] = useState(false);
+
   return (
     <>
       <Header />
@@ -75,13 +75,19 @@ export default function PricingPage() {
             <p className="text-lg text-muted-foreground mb-8 text-pretty">
               Get a quote tailored to your needs. We'll reply within 24 hours with a clear plan and timeline.
             </p>
-            <Button size="lg" className="text-base" asChild>
-              <a href="#contact">Get a Quote</a>
+            <Button 
+              size="lg" 
+              className="text-base"
+              onClick={() => setOpen(true)}
+              aria-label="Get a quote - opens contact modal"
+            >
+              Get a Quote
             </Button>
           </div>
         </section>
       </main>
       <Footer />
+      <ContactModal open={open} onClose={() => setOpen(false)} defaultPackage="Package 2" />
     </>
   )
 }
