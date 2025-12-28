@@ -3,6 +3,11 @@
 import { useState } from "react"
 import Link from "next/link"
 import ContactModal from "@/components/ContactModal"
+import { MessageCircle, Instagram, Facebook } from "lucide-react"
+
+const WHATSAPP = "27607257297";
+const INSTAGRAM = "https://www.instagram.com/cliveuxweb/";
+const FACEBOOK = "https://www.facebook.com/share/17aXXGqeur/";
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -79,28 +84,8 @@ export function Footer() {
             <h3 className="font-semibold mb-4 text-sm">Connect</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-foreground transition-colors"
-                >
-                  Instagram
-                </a>
-              </li>
-              <li>
                 <a href="mailto:hello@clive-ux.com" className="hover:text-foreground transition-colors">
                   Email
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://wa.me/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-foreground transition-colors"
-                >
-                  WhatsApp
                 </a>
               </li>
             </ul>
@@ -112,13 +97,44 @@ export function Footer() {
             <p>&copy; {currentYear} CliveUX. All rights reserved.</p>
             <p className="text-xs">Based in South Africa, working with local & growing businesses</p>
           </div>
-          <div className="flex gap-6">
-            <Link href="#" className="hover:text-foreground transition-colors">
-              Privacy
-            </Link>
-            <Link href="#" className="hover:text-foreground transition-colors">
-              Terms
-            </Link>
+          <div className="flex items-center gap-6">
+            <div className="flex gap-6">
+              <Link href="#" className="hover:text-foreground transition-colors">
+                Privacy
+              </Link>
+              <Link href="#" className="hover:text-foreground transition-colors">
+                Terms
+              </Link>
+            </div>
+            <div className="flex items-center gap-4">
+              <a
+                href={`https://wa.me/${WHATSAPP}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#9CA3AF] hover:text-accent transition-colors"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle className="h-5 w-5" />
+              </a>
+              <a
+                href={INSTAGRAM}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#9CA3AF] hover:text-accent transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a
+                href={FACEBOOK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#9CA3AF] hover:text-accent transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-5 w-5" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
