@@ -146,3 +146,5 @@ After creating the favicon files:
 - Apple devices require specific sizes (180x180 for iOS)
 - Dark mode favicon should be lighter/white version of logo
 
+
+
