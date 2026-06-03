@@ -34,6 +34,15 @@ export default function ContactModal({ open, onClose, defaultPackage }: Props) {
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [open, onClose]);
 
+  useEffect(() => {
+    if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [open]);
+
   const selected = useMemo(
     () => packages.find((p) => p.key === pkg),
     [pkg]
@@ -50,7 +59,10 @@ export default function ContactModal({ open, onClose, defaultPackage }: Props) {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-[60]">
+    <div
+      className="fixed inset-0 z-[60] flex items-center justify-center p-4 sm:p-6"
+      role="presentation"
+    >
       {/* Backdrop */}
       <button
         aria-label="Close contact options"
@@ -62,14 +74,22 @@ export default function ContactModal({ open, onClose, defaultPackage }: Props) {
       />
 
       {/* Card */}
-      <div className="relative mx-auto mt-16 w-[92%] max-w-2xl rounded-2xl bg-white dark:bg-card shadow-xl border border-border">
-        <div className="p-6 md:p-8">
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contact-modal-title"
+        className="relative z-10 flex w-full max-w-2xl max-h-[calc(100dvh-2rem)] flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-xl dark:bg-card"
+      >
+        <div className="overflow-y-auto overscroll-contain p-5 sm:p-6 md:p-8">
           <div className="flex items-start justify-between gap-4">
             <div>
               <p className="text-xs font-medium text-muted-foreground">
                 Contact CliveUX
               </p>
-              <h3 className="mt-1 text-2xl font-semibold tracking-tight">
+              <h3
+                id="contact-modal-title"
+                className="mt-1 text-xl font-semibold tracking-tight sm:text-2xl"
+              >
                 Choose WhatsApp or Email
               </h3>
               <p className="mt-2 text-sm text-muted-foreground">
@@ -78,11 +98,12 @@ export default function ContactModal({ open, onClose, defaultPackage }: Props) {
             </div>
 
             <button
+              type="button"
               onClick={() => {
                 track("contact_modal_close_button");
                 onClose();
               }}
-              className="rounded-lg px-3 py-2 text-sm border border-border hover:bg-secondary"
+              className="shrink-0 rounded-lg border border-border px-3 py-2 text-sm hover:bg-secondary"
             >
               Close
             </button>
@@ -91,7 +112,7 @@ export default function ContactModal({ open, onClose, defaultPackage }: Props) {
           {/* Package selector */}
           <div className="mt-6">
             <p className="text-sm font-medium">Preferred package</p>
-            <div className="mt-3 grid gap-2 md:grid-cols-2">
+            <div className="mt-3 grid gap-2 sm:grid-cols-2">
               {packages.map((p) => {
                 const active = p.key === pkg;
                 return (
@@ -102,19 +123,19 @@ export default function ContactModal({ open, onClose, defaultPackage }: Props) {
                       track("package_select", { package: p.key });
                     }}
                     className={[
-                      "text-left rounded-xl border p-4 transition",
+                      "text-left rounded-xl border p-3 transition sm:p-4",
                       active
                         ? "border-foreground bg-secondary"
                         : "border-border hover:border-foreground",
                     ].join(" ")}
                   >
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-wrap items-center justify-between gap-1">
                       <p className="text-sm font-semibold">{p.key}</p>
                       <span className="text-xs font-medium text-accent">
                         {p.title}
                       </span>
                     </div>
-                    <p className="mt-2 text-sm text-muted-foreground">
+                    <p className="mt-1.5 line-clamp-2 text-xs text-muted-foreground sm:mt-2 sm:text-sm">
                       {p.forWho}
                     </p>
                   </button>
@@ -146,16 +167,16 @@ export default function ContactModal({ open, onClose, defaultPackage }: Props) {
               target="_blank"
               rel="noreferrer"
               onClick={() => track("contact_whatsapp_click", { package: pkg })}
-              className="rounded-xl border border-[rgb(var(--border))] p-4 hover:border-black transition"
+              className="rounded-xl border border-border p-4 transition hover:border-foreground"
             >
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between gap-3">
                 <div>
                   <p className="text-sm font-semibold">WhatsApp</p>
-                  <p className="text-sm text-[rgb(var(--muted))]">
+                  <p className="text-sm text-muted-foreground">
                     Chat instantly (fastest)
                   </p>
                 </div>
-                <span className="text-sm font-medium text-[rgb(var(--gold))]">
+                <span className="shrink-0 text-sm font-medium text-accent">
                   Open →
                 </span>
               </div>
@@ -171,28 +192,28 @@ export default function ContactModal({ open, onClose, defaultPackage }: Props) {
                 }\n\nHosting + domain management included.\n\nThanks,`
               )}`}
               onClick={() => track("contact_email_click", { package: pkg })}
-              className="rounded-xl border border-[rgb(var(--border))] p-4 hover:border-black transition"
+              className="rounded-xl border border-border p-4 transition hover:border-foreground"
             >
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between gap-3">
                 <div>
                   <p className="text-sm font-semibold">Email</p>
-                  <p className="text-sm text-[rgb(var(--muted))]">
+                  <p className="text-sm text-muted-foreground">
                     Best for detailed requests
                   </p>
                 </div>
-                <span className="text-sm font-medium text-[rgb(var(--gold))]">
+                <span className="shrink-0 text-sm font-medium text-accent">
                   Compose →
                 </span>
               </div>
             </a>
           </div>
 
-          <p className="mt-4 text-xs text-[rgb(var(--muted))]">
+          <p className="mt-4 text-xs text-muted-foreground">
             Typical response time: 24 hours or less
           </p>
 
           {/* Social icons */}
-          <div className="mt-6 flex items-center justify-center gap-4">
+          <div className="mt-5 flex items-center justify-center gap-4 pb-1">
             <WhatsAppIconLink size="sm" />
             <SocialLinks variant="icons" iconSize="sm" />
           </div>
