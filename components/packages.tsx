@@ -70,6 +70,12 @@ const packages = [
   },
 ]
 
+const includedInAll = [
+  "Hosting + domain management",
+  "Security basics + SSL",
+  "Support channel for handover",
+]
+
 const addons = [
   "Extra pages",
   "Copywriting (professional wording for all pages)",
@@ -142,9 +148,10 @@ export function Packages() {
                   </li>
                 ))}
               </ul>
-              <Button 
-                className="w-full" 
-                variant={pkg.popular ? "default" : "outline"}
+              <Button
+                className="w-full"
+                variant={pkg.popular ? "brand" : "brandOutline"}
+                size="lg"
                 onClick={() => handleGetStarted(pkg.number)}
               >
                 Get a Quote
@@ -154,34 +161,41 @@ export function Packages() {
           ))}
         </div>
 
-        {/* Important Note */}
         <AnimateOnScroll direction="up" delay={400}>
-          <div className="bg-accent/5 border border-accent/20 rounded-lg p-6 mb-12">
-          <h4 className="font-semibold mb-2 flex items-center gap-2">
-            <Check className="h-5 w-5 text-accent" />
-            Included in ALL packages
-          </h4>
-          <div className="text-sm text-muted-foreground space-y-1 ml-7">
-            <p>✓ Hosting + Domain Management</p>
-            <p>✓ Security basics + SSL</p>
-            <p>✓ Support channel for handover</p>
-          </div>
-          </div>
-        </AnimateOnScroll>
-
-        {/* Add-ons */}
-        <AnimateOnScroll direction="up" delay={500}>
-          <div className="max-w-3xl">
-          <h3 className="text-2xl font-semibold mb-4">Add-ons</h3>
-          <p className="text-sm text-muted-foreground mb-6">Choose anytime to enhance your package</p>
-          <div className="grid sm:grid-cols-2 gap-3">
-            {addons.map((addon) => (
-              <div key={addon} className="flex items-start gap-3 text-sm">
-                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-accent flex-shrink-0" />
-                <span>{addon}</span>
+          <div className="border-t border-border pt-10 sm:pt-12">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
+              <div>
+                <h3 className="text-lg font-semibold mb-5">
+                  Included in every package
+                </h3>
+                <ul className="space-y-3">
+                  {includedInAll.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm">
+                      <Check className="h-4 w-4 text-accent mt-0.5 shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            ))}
-          </div>
+
+              <div>
+                <h3 className="text-lg font-semibold mb-2">Add-ons</h3>
+                <p className="text-sm text-muted-foreground mb-5">
+                  Optional extras you can add to any package.
+                </p>
+                <ul className="space-y-3">
+                  {addons.map((addon) => (
+                    <li
+                      key={addon}
+                      className="flex items-start gap-3 text-sm text-muted-foreground"
+                    >
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
+                      <span>{addon}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </AnimateOnScroll>
       </div>

@@ -59,9 +59,11 @@ export function Header() {
             </nav>
 
             <div className="flex items-center gap-4">
-              <Button 
+              <Button
                 onClick={() => setOpen(true)}
-                className="hidden sm:flex bg-foreground text-background hover:bg-foreground/90"
+                variant="brand"
+                size="sm"
+                className="hidden h-10 px-5 sm:flex"
                 aria-label="Get a quote - opens contact modal"
               >
                 Get a Quote
@@ -131,7 +133,8 @@ export function Header() {
                         setMobileMenuOpen(false);
                         setOpen(true);
                       }}
-                      className="w-full bg-foreground text-background hover:bg-foreground/90"
+                      variant="brand"
+                      className="w-full h-11"
                       aria-label="Get a quote - opens contact modal"
                     >
                       Get a Quote
