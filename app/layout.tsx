@@ -3,7 +3,18 @@ import type { Metadata, Viewport } from "next"
 import Script from "next/script"
 import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { BackToTop } from "@/components/back-to-top"
+import { SOCIAL_PLATFORMS } from "@/lib/social-links"
 import "./globals.css"
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "CliveUX",
+  url: "https://cliveux.co.za",
+  logo: "https://cliveux.co.za/cx-logo.png",
+  sameAs: SOCIAL_PLATFORMS.map((platform) => platform.href),
+}
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -13,7 +24,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://cliveux.com"),
+  metadataBase: new URL("https://cliveux.co.za"),
   title: {
     default: "CliveUX - Digital Innovation Studio | Websites & Business Systems",
     template: "%s | CliveUX"
@@ -36,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_ZA",
-    url: "https://cliveux.com",
+    url: "https://cliveux.co.za",
     siteName: "CliveUX",
     title: "CliveUX - Digital Innovation Studio | Websites & Business Systems",
     description:
@@ -72,9 +83,13 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.png",
-    apple: "/apple-icon.png",
-    shortcut: "/favicon.png",
+    icon: [
+      { url: "/favicon.png", sizes: "48x48", type: "image/png" },
+      { url: "/cx-logo.png", sizes: "512x512", type: "image/png" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: ["/favicon.png"],
   },
 }
 
@@ -92,6 +107,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className={`font-sans antialiased ${inter.className}`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
+        />
         {/* Google tag (gtag.js) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-J5E9PEGV07"
@@ -106,6 +127,7 @@ export default function RootLayout({
           `}
         </Script>
         {children}
+        <BackToTop />
         <Analytics />
       </body>
     </html>

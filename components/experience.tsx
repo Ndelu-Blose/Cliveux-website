@@ -11,21 +11,12 @@ const industries = [
   "Non-profits & community projects",
 ]
 
-const expertise = [
-  {
-    category: "Specializations",
-    items: [
-      "Fast websites",
-      "Business automation",
-      "Online booking systems",
-      "Custom dashboards",
-      "Secure deployments",
-    ],
-  },
-  {
-    category: "Tools & Methods",
-    items: ["Next.js / React", ".NET / APIs", "Tailwind UI", "Database design", "Analytics & SEO basics"],
-  },
+const specializations = [
+  "Fast websites",
+  "Business automation",
+  "Online booking systems",
+  "Custom dashboards",
+  "Secure deployments",
 ]
 
 export function Experience() {
@@ -57,19 +48,16 @@ export function Experience() {
             </div>
           </div>
 
-          <div className="space-y-8">
-            {expertise.map((group) => (
-              <div key={group.category}>
-                <h3 className="text-xl font-semibold mb-4">{group.category}</h3>
-                <div className="flex flex-wrap gap-3">
-                  {group.items.map((item) => (
-                    <div key={item} className="px-4 py-2 bg-background border border-border rounded-full text-sm">
-                      {item}
-                    </div>
-                  ))}
+          <div>
+            <h3 className="text-xl font-semibold mb-6">Specializations</h3>
+            <div className="space-y-4">
+              {specializations.map((item) => (
+                <div key={item} className="flex items-start gap-3">
+                  <div className="mt-2 h-1.5 w-1.5 rounded-full bg-accent flex-shrink-0" />
+                  <span className="text-muted-foreground">{item}</span>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 

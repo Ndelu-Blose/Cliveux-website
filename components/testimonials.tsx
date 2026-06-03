@@ -1,7 +1,7 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
-import { AnimateOnScroll } from "@/components/animate-on-scroll";
+import { AnimateOnScroll, AnimateOnScrollStagger } from "@/components/animate-on-scroll";
 
 const testimonials = [
   {
@@ -40,10 +40,13 @@ export function Testimonials() {
           </div>
         </AnimateOnScroll>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+        <AnimateOnScrollStagger
+          className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6"
+          direction="up"
+          stagger={100}
+        >
           {testimonials.map((testimonial, index) => (
-            <AnimateOnScroll key={index} direction="up" delay={index * 100}>
-              <Card className="p-6 md:p-8 hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
+              <Card key={index} className="p-6 md:p-8 hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
               <blockquote className="text-base md:text-lg leading-relaxed mb-6 text-muted-foreground">
                 "{testimonial.quote}"
               </blockquote>
@@ -54,9 +57,8 @@ export function Testimonials() {
                 </div>
               </div>
               </Card>
-            </AnimateOnScroll>
           ))}
-        </div>
+        </AnimateOnScrollStagger>
       </div>
     </section>
   );

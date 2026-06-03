@@ -24,16 +24,17 @@ export function CTA() {
               Tell us what you need — we'll reply with a clear plan and quote.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <Button 
-                size="lg" 
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center mb-8">
+              <Button
+                size="lg"
+                variant="brand"
                 onClick={() => setOpen(true)}
-                className="bg-foreground text-background hover:bg-foreground/90 h-12 px-8"
+                className="sm:min-w-[180px]"
                 aria-label="Get a quote - opens contact modal"
               >
                 Get a Quote
               </Button>
-              <Button size="lg" variant="outline" asChild className="h-12 px-8 bg-transparent">
+              <Button size="lg" variant="brandOutline" asChild className="sm:min-w-[180px]">
                 <Link href="#packages" aria-label="View packages section">View Packages</Link>
               </Button>
             </div>
