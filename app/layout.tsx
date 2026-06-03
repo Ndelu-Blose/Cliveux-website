@@ -11,8 +11,8 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "CliveUX",
-  url: "https://cliveux.com",
-  logo: "https://cliveux.com/cx-logo.png",
+  url: "https://cliveux.co.za",
+  logo: "https://cliveux.co.za/cx-logo.png",
   sameAs: SOCIAL_PLATFORMS.map((platform) => platform.href),
 }
 
@@ -24,7 +24,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://cliveux.com"),
+  metadataBase: new URL("https://cliveux.co.za"),
   title: {
     default: "CliveUX - Digital Innovation Studio | Websites & Business Systems",
     template: "%s | CliveUX"
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_ZA",
-    url: "https://cliveux.com",
+    url: "https://cliveux.co.za",
     siteName: "CliveUX",
     title: "CliveUX - Digital Innovation Studio | Websites & Business Systems",
     description:
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
       { url: "/icon.svg", type: "image/svg+xml" },
     ],
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
-    shortcut: "/favicon.png",
+    shortcut: ["/favicon.png"],
   },
 }
 
