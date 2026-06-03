@@ -7,6 +7,15 @@ const nextConfig = {
     unoptimized: false, // Enable Next.js image optimization for Vercel
     formats: ['image/avif', 'image/webp'],
   },
+  async redirects() {
+    return [
+      {
+        source: "/favicon.ico",
+        destination: "/favicon.png",
+        permanent: true,
+      },
+    ]
+  },
 }
 
 export default nextConfig
