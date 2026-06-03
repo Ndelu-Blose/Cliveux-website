@@ -63,7 +63,7 @@ export function Header() {
                 onClick={() => setOpen(true)}
                 variant="brand"
                 size="sm"
-                className="hidden h-10 px-5 sm:flex"
+                className="hidden sm:inline-flex"
                 aria-label="Get a quote - opens contact modal"
               >
                 Get a Quote
@@ -134,7 +134,8 @@ export function Header() {
                         setOpen(true);
                       }}
                       variant="brand"
-                      className="w-full h-11"
+                      size="lg"
+                      className="w-full"
                       aria-label="Get a quote - opens contact modal"
                     >
                       Get a Quote
