@@ -3,7 +3,17 @@ import type { Metadata, Viewport } from "next"
 import Script from "next/script"
 import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { BackToTop } from "@/components/back-to-top"
+import { SOCIAL_PLATFORMS } from "@/lib/social-links"
 import "./globals.css"
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "CliveUX",
+  url: "https://cliveux.com",
+  sameAs: SOCIAL_PLATFORMS.map((platform) => platform.href),
+}
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -92,6 +102,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className={`font-sans antialiased ${inter.className}`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
+        />
         {/* Google tag (gtag.js) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-J5E9PEGV07"
@@ -106,6 +122,7 @@ export default function RootLayout({
           `}
         </Script>
         {children}
+        <BackToTop />
         <Analytics />
       </body>
     </html>

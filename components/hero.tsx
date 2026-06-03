@@ -29,41 +29,13 @@ export function Hero() {
         </AnimateOnMount>
 
         <AnimateOnMount direction="up" delay={600}>
-          <div className="mt-8 flex w-full flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <Button
-              size="lg"
-              asChild
-              className="h-12 w-full max-w-[230px] bg-foreground px-8 text-background hover:bg-foreground/90 sm:w-auto"
-            >
+          <div className="mt-8 flex w-full flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center sm:gap-4">
+            <Button size="lg" variant="brand" asChild className="w-full sm:w-auto sm:min-w-[180px]">
               <Link href="#contact">Get a Quote</Link>
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              asChild
-              className="h-12 w-full max-w-[230px] bg-transparent px-8 sm:w-auto"
-            >
+            <Button size="lg" variant="brandOutline" asChild className="w-full sm:w-auto sm:min-w-[180px]">
               <Link href="#services">Explore Services</Link>
             </Button>
-          </div>
-        </AnimateOnMount>
-
-        <AnimateOnMount direction="up" delay={800}>
-          <div className="mt-14 flex flex-col flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground sm:mt-16 sm:flex-row sm:gap-8">
-            <div className="text-center">
-              <div className="text-2xl font-semibold text-foreground mb-1">7–14 days</div>
-              <div>Typical website delivery</div>
-            </div>
-            <div className="hidden sm:block h-12 w-px bg-border" />
-            <div className="text-center">
-              <div className="text-2xl font-semibold text-foreground mb-1">Web + Systems</div>
-              <div>Built for operations</div>
-            </div>
-            <div className="hidden sm:block h-12 w-px bg-border" />
-            <div className="text-center">
-              <div className="text-2xl font-semibold text-foreground mb-1">Support ready</div>
-              <div>Maintenance & hosting</div>
-            </div>
           </div>
         </AnimateOnMount>
       </div>
