@@ -1,7 +1,7 @@
 "use client";
 
 import { Card } from "@/components/ui/card"
-import { AnimateOnScroll } from "@/components/animate-on-scroll"
+import { AnimateOnScroll, AnimateOnScrollStagger } from "@/components/animate-on-scroll"
 
 const services = [
   {
@@ -37,7 +37,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+    <section id="services" className="py-14 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-secondary/30">
       <div className="mx-auto max-w-7xl">
         <AnimateOnScroll direction="up">
           <div className="mb-12 sm:mb-16 max-w-2xl">
@@ -52,10 +52,13 @@ export function Services() {
           </div>
         </AnimateOnScroll>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {services.map((service, index) => (
-            <AnimateOnScroll key={service.number} direction="up" delay={index * 100}>
-              <Card className="p-8 hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
+        <AnimateOnScrollStagger
+          className="grid md:grid-cols-2 gap-6"
+          direction="up"
+          stagger={100}
+        >
+          {services.map((service) => (
+              <Card key={service.number} className="p-8 hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
                 <div className="text-sm text-accent font-semibold mb-4">{service.number}</div>
                 <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>
                 <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
@@ -68,9 +71,8 @@ export function Services() {
                   ))}
                 </ul>
               </Card>
-            </AnimateOnScroll>
           ))}
-        </div>
+        </AnimateOnScrollStagger>
       </div>
     </section>
   )

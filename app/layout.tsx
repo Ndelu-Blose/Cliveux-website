@@ -12,6 +12,7 @@ const organizationJsonLd = {
   "@type": "Organization",
   name: "CliveUX",
   url: "https://cliveux.com",
+  logo: "https://cliveux.com/cx-logo.png",
   sameAs: SOCIAL_PLATFORMS.map((platform) => platform.href),
 }
 
@@ -82,8 +83,12 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.png",
-    apple: "/apple-icon.png",
+    icon: [
+      { url: "/favicon.png", sizes: "48x48", type: "image/png" },
+      { url: "/cx-logo.png", sizes: "512x512", type: "image/png" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
     shortcut: "/favicon.png",
   },
 }

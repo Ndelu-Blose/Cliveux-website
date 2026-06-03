@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
 import ContactModal from "@/components/ContactModal"
-import { AnimateOnScroll } from "@/components/animate-on-scroll"
+import { AnimateOnScroll, AnimateOnScrollStagger } from "@/components/animate-on-scroll"
 import type { PackageKey } from "@/content/packages"
 
 const packages = [
@@ -122,10 +122,14 @@ export function Packages() {
           </div>
         </AnimateOnScroll>
 
-        <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12">
-          {packages.map((pkg, index) => (
-            <AnimateOnScroll key={pkg.number} direction="up" delay={index * 100}>
+        <AnimateOnScrollStagger
+          className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12"
+          direction="up"
+          stagger={100}
+        >
+          {packages.map((pkg) => (
               <Card
+                key={pkg.number}
                 className={`p-8 relative ${pkg.popular ? "border-accent border-2" : "hover:border-accent/50"} transition-all duration-300 hover:shadow-lg`}
               >
               {pkg.popular && (
@@ -157,9 +161,8 @@ export function Packages() {
                 Get a Quote
               </Button>
               </Card>
-            </AnimateOnScroll>
           ))}
-        </div>
+        </AnimateOnScrollStagger>
 
         <AnimateOnScroll direction="up" delay={400}>
           <div className="border-t border-border pt-10 sm:pt-12">

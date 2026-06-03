@@ -1,7 +1,7 @@
 "use client";
 
 import { Check } from "lucide-react"
-import { AnimateOnScroll } from "@/components/animate-on-scroll"
+import { AnimateOnScroll, AnimateOnScrollStagger } from "@/components/animate-on-scroll"
 
 export function SocialProof() {
   const proofPoints = [
@@ -34,10 +34,14 @@ export function SocialProof() {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-              {proofPoints.map((point, index) => (
-                <AnimateOnScroll key={point.title} direction="up" delay={index * 100}>
-                  <div className="flex items-start gap-4">
+            <AnimateOnScrollStagger
+              className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6"
+              direction="up"
+              stagger={80}
+              baseDelay={80}
+            >
+              {proofPoints.map((point) => (
+                  <div key={point.title} className="flex items-start gap-4">
                 <div className="h-8 w-8 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-1">
                   <Check className="h-4 w-4 text-accent" />
                 </div>
@@ -48,9 +52,8 @@ export function SocialProof() {
                   </p>
                 </div>
                   </div>
-                </AnimateOnScroll>
               ))}
-            </div>
+            </AnimateOnScrollStagger>
           </div>
         </AnimateOnScroll>
       </div>
