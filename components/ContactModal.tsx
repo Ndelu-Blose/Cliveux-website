@@ -3,18 +3,14 @@
 import { useEffect, useMemo, useState } from "react";
 import { packages, PackageKey } from "@/content/packages";
 import { track } from "@/lib/analytics";
-import { MessageCircle, Instagram, Facebook } from "lucide-react";
+import { SocialLinks, WhatsAppIconLink } from "@/components/social-links";
+import { EMAIL, whatsappUrl } from "@/lib/contact";
 
 type Props = {
   open: boolean;
   onClose: () => void;
   defaultPackage?: PackageKey;
 };
-
-const WHATSAPP = "27607257297";
-const EMAIL = "cliveuxweb@gmail.com";
-const INSTAGRAM = "https://www.instagram.com/cliveuxweb/";
-const FACEBOOK = "https://www.facebook.com/share/17aXXGqeur/";
 
 export default function ContactModal({ open, onClose, defaultPackage }: Props) {
   const [pkg, setPkg] = useState<PackageKey>(defaultPackage ?? "Package 2");
@@ -146,7 +142,7 @@ export default function ContactModal({ open, onClose, defaultPackage }: Props) {
           <div className="mt-6 grid gap-3">
             {/* WhatsApp */}
             <a
-              href={`https://wa.me/${WHATSAPP}?text=${waMessage}`}
+              href={whatsappUrl(waMessage)}
               target="_blank"
               rel="noreferrer"
               onClick={() => track("contact_whatsapp_click", { package: pkg })}
@@ -197,33 +193,8 @@ export default function ContactModal({ open, onClose, defaultPackage }: Props) {
 
           {/* Social icons */}
           <div className="mt-6 flex items-center justify-center gap-4">
-            <a
-              href="https://wa.me/27607257297"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#9CA3AF] hover:text-accent transition-colors"
-              aria-label="WhatsApp"
-            >
-              <MessageCircle className="h-4 w-4" />
-            </a>
-            <a
-              href={INSTAGRAM}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#9CA3AF] hover:text-accent transition-colors"
-              aria-label="Instagram"
-            >
-              <Instagram className="h-4 w-4" />
-            </a>
-            <a
-              href={FACEBOOK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#9CA3AF] hover:text-accent transition-colors"
-              aria-label="Facebook"
-            >
-              <Facebook className="h-4 w-4" />
-            </a>
+            <WhatsAppIconLink size="sm" />
+            <SocialLinks variant="icons" iconSize="sm" />
           </div>
         </div>
       </div>

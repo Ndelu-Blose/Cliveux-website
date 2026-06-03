@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu } from "lucide-react"
@@ -38,12 +39,27 @@ export function Header() {
         scrolled ? "border-border/60 shadow-sm" : "border-border/40"
       )}>
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-          <div className="flex h-20 items-center justify-between">
-            <Link href="/" className="text-xl font-semibold tracking-tight focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 rounded" aria-label="CliveUX Home">
-              CliveUX
+          <div className="grid h-[var(--header-height)] grid-cols-[1fr_auto_1fr] items-center">
+            <Link
+              href="/"
+              className="flex items-center gap-2.5 justify-self-start focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded-lg"
+              aria-label="CliveUX Home"
+            >
+              <Image
+                src="/cx-logo.png"
+                alt=""
+                width={40}
+                height={40}
+                className="h-10 w-10 shrink-0 rounded-xl object-cover"
+                priority
+              />
+              <span className="text-xl font-semibold tracking-tight">CliveUX</span>
             </Link>
 
-            <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
+            <nav
+              className="hidden md:flex items-center justify-center gap-7 lg:gap-8"
+              aria-label="Main navigation"
+            >
               <Link href="#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 rounded">
                 Services
               </Link>
@@ -58,10 +74,12 @@ export function Header() {
               </Link>
             </nav>
 
-            <div className="flex items-center gap-4">
-              <Button 
+            <div className="flex items-center justify-end gap-3 sm:gap-4">
+              <Button
                 onClick={() => setOpen(true)}
-                className="hidden sm:flex bg-foreground text-background hover:bg-foreground/90"
+                variant="brand"
+                size="sm"
+                className="hidden sm:inline-flex"
                 aria-label="Get a quote - opens contact modal"
               >
                 Get a Quote
@@ -131,7 +149,9 @@ export function Header() {
                         setMobileMenuOpen(false);
                         setOpen(true);
                       }}
-                      className="w-full bg-foreground text-background hover:bg-foreground/90"
+                      variant="brand"
+                      size="lg"
+                      className="w-full"
                       aria-label="Get a quote - opens contact modal"
                     >
                       Get a Quote

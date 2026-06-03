@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimateOnScroll } from "@/components/animate-on-scroll";
+import { AnimateOnScroll, AnimateOnScrollStagger } from "@/components/animate-on-scroll";
 
 export function Approach() {
   const steps = [
@@ -38,10 +38,13 @@ export function Approach() {
           </div>
         </AnimateOnScroll>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <AnimateOnScrollStagger
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+          direction="up"
+          stagger={90}
+        >
           {steps.map((step, index) => (
-            <AnimateOnScroll key={step.title} direction="up" delay={index * 100}>
-              <div className="relative">
+              <div key={step.title} className="relative">
               <div className="text-5xl font-light text-muted mb-4">{(index + 1).toString().padStart(2, "0")}</div>
               <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
               <p className="text-muted-foreground leading-relaxed text-sm">{step.description}</p>
@@ -49,9 +52,8 @@ export function Approach() {
                 <div className="hidden lg:block absolute top-8 -right-4 w-8 h-px bg-border" />
               )}
               </div>
-            </AnimateOnScroll>
           ))}
-        </div>
+        </AnimateOnScrollStagger>
       </div>
     </section>
   )
