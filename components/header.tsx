@@ -5,7 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu } from "lucide-react"
-import ContactModal from "@/components/ContactModal"
+import { StartProjectButton, useContactModal } from "@/components/contact-modal-provider"
 import {
   Sheet,
   SheetContent,
@@ -18,8 +18,16 @@ import {
 } from "@/components/ui/sheet"
 import { cn } from "@/lib/utils"
 
+const navLinks = [
+  { href: "/#solutions", label: "Solutions" },
+  { href: "/#work", label: "Work" },
+  { href: "/#about", label: "About" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/#contact", label: "Contact" },
+]
+
 export function Header() {
-  const [open, setOpen] = useState(false);
+  const { openContact } = useContactModal();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -33,7 +41,6 @@ export function Header() {
   }, []);
 
   return (
-    <>
       <header className={cn(
         "fixed top-0 left-0 right-0 z-50 border-b bg-background/80 backdrop-blur-sm transition-all duration-300",
         scrolled ? "border-border/60 shadow-sm" : "border-border/40"
@@ -57,36 +64,25 @@ export function Header() {
             </Link>
 
             <nav
-              className="hidden md:flex items-center justify-center gap-7 lg:gap-8"
+              className="hidden lg:flex items-center justify-center gap-7"
               aria-label="Main navigation"
             >
-              <Link href="#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 rounded">
-                Services
-              </Link>
-              <Link href="#approach" className="text-sm text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 rounded">
-                Approach
-              </Link>
-              <Link href="#experience" className="text-sm text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 rounded">
-                Experience
-              </Link>
-              <Link href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 rounded">
-                Contact
-              </Link>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 rounded"
+                >
+                  {link.label}
+                </Link>
+              ))}
             </nav>
 
             <div className="flex items-center justify-end gap-3 sm:gap-4">
-              <Button
-                onClick={() => setOpen(true)}
-                variant="brand"
-                size="sm"
-                className="hidden sm:inline-flex"
-                aria-label="Get a quote - opens contact modal"
-              >
-                Get a Quote
-              </Button>
+              <StartProjectButton size="sm" className="hidden sm:inline-flex" />
 
               <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-                <SheetTrigger asChild className="md:hidden">
+                <SheetTrigger asChild className="lg:hidden">
                   <Button variant="ghost" size="icon" aria-label="Open mobile menu">
                     <Menu className="h-6 w-6" />
                   </Button>
@@ -106,55 +102,29 @@ export function Header() {
                     className="flex min-h-0 flex-1 flex-col gap-5 overflow-y-auto px-5 py-6"
                     aria-label="Mobile navigation"
                   >
-                    <SheetClose asChild>
-                      <Link
-                        href="#services"
-                        className="text-xl font-medium tracking-tight text-foreground transition-colors hover:text-accent"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        Services
-                      </Link>
-                    </SheetClose>
-                    <SheetClose asChild>
-                      <Link
-                        href="#approach"
-                        className="text-xl font-medium tracking-tight text-foreground transition-colors hover:text-accent"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        Approach
-                      </Link>
-                    </SheetClose>
-                    <SheetClose asChild>
-                      <Link
-                        href="#experience"
-                        className="text-xl font-medium tracking-tight text-foreground transition-colors hover:text-accent"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        Experience
-                      </Link>
-                    </SheetClose>
-                    <SheetClose asChild>
-                      <Link
-                        href="#contact"
-                        className="text-xl font-medium tracking-tight text-foreground transition-colors hover:text-accent"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        Contact
-                      </Link>
-                    </SheetClose>
+                    {navLinks.map((link) => (
+                      <SheetClose asChild key={link.href}>
+                        <Link
+                          href={link.href}
+                          className="text-xl font-medium tracking-tight text-foreground transition-colors hover:text-accent"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {link.label}
+                        </Link>
+                      </SheetClose>
+                    ))}
                   </nav>
                   <SheetFooter className="mt-auto border-t border-border px-5 py-5">
                     <Button
                       onClick={() => {
                         setMobileMenuOpen(false);
-                        setOpen(true);
+                        openContact();
                       }}
                       variant="brand"
                       size="lg"
                       className="w-full"
-                      aria-label="Get a quote - opens contact modal"
                     >
-                      Get a Quote
+                      Start a Project
                     </Button>
                   </SheetFooter>
                 </SheetContent>
@@ -163,8 +133,5 @@ export function Header() {
           </div>
         </div>
       </header>
-
-      <ContactModal open={open} onClose={() => setOpen(false)} defaultPackage="Package 2" />
-    </>
   )
 }
