@@ -70,9 +70,10 @@ export function AnimateOnScroll({
   return (
     <div
       ref={ref}
+      data-reveal
       className={cn(
-        "motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:translate-none motion-reduce:blur-none",
-        "transition-[opacity,transform,filter] will-change-[opacity,transform]",
+        "motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:translate-none",
+        "transition-[opacity,transform] will-change-[opacity,transform]",
         show ? motionVisible[direction] : motionHidden[direction],
         show && "will-change-auto",
         className

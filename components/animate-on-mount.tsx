@@ -47,16 +47,16 @@ export function AnimateOnMount({
 
   return (
     <div
+      data-reveal
       className={cn(
-        "motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:translate-none motion-reduce:blur-none",
-        "transition-[opacity,transform,filter] will-change-[opacity,transform]",
+        "motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:translate-none",
+        "transition-[opacity,transform] will-change-[opacity,transform]",
         show ? motionVisible[direction] : motionHidden[direction],
         show && "will-change-auto",
         className
       )}
       style={{
         transitionDuration: `${duration}ms`,
-        transitionDelay: reduceMotion ? "0ms" : `${delay}ms`,
         transitionTimingFunction: MOTION_EASE,
       }}
     >

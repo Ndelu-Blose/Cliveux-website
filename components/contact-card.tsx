@@ -1,25 +1,15 @@
 "use client";
 
+import Link from "next/link";
 import { Card } from "@/components/ui/card";
-import { ArrowUpRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Clock, MapPin } from "lucide-react";
 import type { ComponentType } from "react";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
-import { SocialLinks } from "@/components/social-links";
+import { StartProjectButton } from "@/components/contact-modal-provider";
+import { SocialLinks, WhatsAppIcon } from "@/components/social-links";
 import { EMAIL, whatsappUrl } from "@/lib/contact";
 import { cn } from "@/lib/utils";
-
-function WhatsAppIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className={className}
-      aria-hidden
-    >
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-    </svg>
-  );
-}
 
 function GmailIcon({ className }: { className?: string }) {
   return (
@@ -38,6 +28,7 @@ const primaryChannels: {
   id: string;
   title: string;
   description: string;
+  action: string;
   href: string;
   external: boolean;
   ariaLabel: string;
@@ -48,7 +39,8 @@ const primaryChannels: {
   {
     id: "whatsapp",
     title: "WhatsApp",
-    description: "Fastest way to reach us — chat in real time.",
+    description: "Fastest way to reach us. Send a quick message about your business.",
+    action: "Start a chat",
     href: whatsappUrl(),
     external: true,
     ariaLabel: "Open WhatsApp chat with CliveUX",
@@ -59,7 +51,8 @@ const primaryChannels: {
   {
     id: "email",
     title: "Email",
-    description: "Best for detailed briefs, quotes, and attachments.",
+    description: "Best for detailed briefs, quotes and attachments.",
+    action: "Send an email",
     href: `mailto:${EMAIL}`,
     external: false,
     ariaLabel: "Send an email to CliveUX",
@@ -72,7 +65,7 @@ const primaryChannels: {
 export function ContactCard() {
   return (
     <section
-      id="get-in-touch"
+      id="contact"
       className="relative overflow-hidden py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8"
     >
       <div
@@ -86,30 +79,55 @@ export function ContactCard() {
 
       <div className="relative mx-auto max-w-6xl">
         <AnimateOnScroll direction="up">
-          <div className="mb-10 sm:mb-12 max-w-2xl">
-            <p className="text-xs font-medium uppercase tracking-[0.22em] text-accent mb-3">
+          <div className="mb-10 sm:mb-12 max-w-3xl">
+            <p className="text-xs font-medium uppercase tracking-[0.22em] text-accent-text mb-3">
               Contact
             </p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight mb-4 sm:mb-5 text-balance">
-              Get in touch
+              Your business has enough to worry about.
               <span className="block text-accent font-normal">
-                We&apos;re here to help
+                Let&apos;s make the digital side simpler.
               </span>
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-              Pick a channel below. WhatsApp and email get the quickest reply.
+              Tell us about your business and what&apos;s getting in the way. We&apos;ll reply with a clear plan and quote.
             </p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <StartProjectButton size="lg" className="sm:min-w-[180px]" />
+              <Button size="lg" variant="brandOutline" asChild className="sm:min-w-[180px]">
+                <Link href="/pricing">View Pricing</Link>
+              </Button>
+            </div>
           </div>
         </AnimateOnScroll>
 
         <AnimateOnScroll direction="up" delay={120}>
-          <Card className="overflow-hidden rounded-2xl border border-border/80 bg-card/90 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.15)] backdrop-blur-sm">
+          <Card className="overflow-hidden rounded-2xl border border-border/80 bg-card/90 shadow-[0_2px_6px_rgba(0,0,0,0.06),0_30px_70px_-28px_rgba(0,0,0,0.45)] backdrop-blur-sm">
             <div
               className="h-px w-full bg-gradient-to-r from-transparent via-accent/70 to-transparent"
               aria-hidden
             />
 
             <div className="p-5 sm:p-7 md:p-9">
+              <div className="mb-6 flex flex-col gap-4 sm:mb-7 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <h3 className="text-lg font-semibold sm:text-xl">Or talk to us directly</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    No forms. Message us and we&apos;ll take it from there.
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-background px-3 py-1 text-xs text-muted-foreground">
+                    <Clock className="h-3.5 w-3.5 text-accent-text" />
+                    Replies within 24 hours
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-background px-3 py-1 text-xs text-muted-foreground">
+                    <MapPin className="h-3.5 w-3.5 text-accent-text" />
+                    Durban, KZN
+                  </span>
+                </div>
+              </div>
+
               <div className="grid md:grid-cols-2 gap-3 sm:gap-4">
                 {primaryChannels.map((channel) => {
                   const Icon = channel.icon;
@@ -139,16 +157,17 @@ export function ContactCard() {
                           <Icon className="h-6 w-6" />
                         </span>
                       </div>
-                      <div className="min-w-0 flex-1 text-left">
-                        <div className="flex items-start justify-between gap-2">
-                          <h3 className="font-semibold text-base">
-                            {channel.title}
-                          </h3>
-                          <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground/60 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent" />
-                        </div>
+                      <div className="flex min-w-0 flex-1 flex-col text-left">
+                        <h3 className="font-semibold text-base">
+                          {channel.title}
+                        </h3>
                         <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                           {channel.description}
                         </p>
+                        <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent-text">
+                          {channel.action}
+                          <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                        </span>
                       </div>
                     </a>
                   );
@@ -156,7 +175,10 @@ export function ContactCard() {
               </div>
             </div>
 
-            <div className="flex items-center justify-center gap-5 border-t border-border/60 bg-secondary/20 px-6 py-5 sm:py-6">
+            <div className="flex flex-col items-center justify-between gap-3 border-t border-border/60 bg-secondary/20 px-6 py-5 sm:flex-row sm:px-9 sm:py-5">
+              <p className="text-sm text-muted-foreground">
+                Follow CliveUX for recent work and updates
+              </p>
               <SocialLinks variant="bar" embedded />
             </div>
           </Card>
