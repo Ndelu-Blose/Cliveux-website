@@ -4,21 +4,43 @@ import Script from "next/script"
 import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { BackToTop } from "@/components/back-to-top"
+import { ContactModalProvider } from "@/components/contact-modal-provider"
+import { EMAIL } from "@/lib/contact"
 import { SOCIAL_PLATFORMS } from "@/lib/social-links"
 import "./globals.css"
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "ProfessionalService",
   name: "CliveUX",
+  description:
+    "Websites, business systems and digital support for South African SMMEs.",
   url: "https://cliveux.co.za",
   logo: "https://cliveux.co.za/cx-logo.png",
+  image: "https://cliveux.co.za/opengraph-image",
+  email: EMAIL,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Durban",
+    addressRegion: "KwaZulu-Natal",
+    addressCountry: "ZA",
+  },
+  areaServed: { "@type": "Country", name: "South Africa" },
+  knowsAbout: ["Website design", "Business systems", "Website hosting and maintenance", "SEO"],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "CliveUX solutions",
+    itemListElement: ["Websites", "Business Systems", "Digital Support"].map((name) => ({
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", name },
+    })),
+  },
   sameAs: SOCIAL_PLATFORMS.map((platform) => platform.href),
 }
 
 const inter = Inter({ 
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
   variable: "--font-inter",
 })
@@ -26,21 +48,22 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://cliveux.co.za"),
   title: {
-    default: "CliveUX - Digital Innovation Studio | Websites & Business Systems",
+    default: "CliveUX | Digital solutions for South African SMMEs",
     template: "%s | CliveUX"
   },
   description:
-    "We design and develop websites, business systems, and automations that help teams move faster, look professional, and grow. Based in South Africa.",
+    "CliveUX helps South African SMMEs build a stronger digital presence, streamline everyday work and create systems that support growth. Websites, business systems and digital support. Based in Durban.",
   keywords: [
-    "web development",
-    "website design",
-    "business systems",
-    "automation",
-    "UI/UX design",
+    "SMME websites",
+    "small business website South Africa",
+    "business systems for small businesses",
+    "website design Durban",
+    "Durban web developer",
+    "booking system South Africa",
+    "website hosting and maintenance",
+    "Google Business Profile setup",
+    "KwaZulu-Natal",
     "South Africa",
-    "Durban",
-    "web development services",
-    "custom web applications",
   ],
   authors: [{ name: "CliveUX" }],
   creator: "CliveUX",
@@ -49,27 +72,18 @@ export const metadata: Metadata = {
     locale: "en_ZA",
     url: "https://cliveux.co.za",
     siteName: "CliveUX",
-    title: "CliveUX - Digital Innovation Studio | Websites & Business Systems",
+    title: "CliveUX | Digital solutions for South African SMMEs",
     description:
-      "We design and develop websites, business systems, and automations that help teams move faster, look professional, and grow.",
-    images: [
-      {
-        // TODO: Create a proper 1200x630px OG image for social sharing
-        // Currently using logo as fallback - replace with optimized og-image.png
-        url: "/cliveux logo Black.png",
-        width: 1200,
-        height: 630,
-        alt: "CliveUX - Digital Innovation Studio",
-      },
-    ],
+      "We help growing businesses look professional, work smarter and build the digital foundations they need to grow.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "CliveUX - Digital Innovation Studio",
+    title: "CliveUX | Digital solutions for South African SMMEs",
     description:
-      "We design and develop websites, business systems, and automations that help teams move faster, look professional, and grow.",
-    // TODO: Replace with proper og-image.png (1200x630px) for optimal social sharing
-    images: ["/cliveux logo Black.png"],
+      "We help growing businesses look professional, work smarter and build the digital foundations they need to grow.",
+  },
+  alternates: {
+    canonical: "/",
   },
   robots: {
     index: true,
@@ -81,15 +95,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  icons: {
-    icon: [
-      { url: "/favicon.png", sizes: "48x48", type: "image/png" },
-      { url: "/cx-logo.png", sizes: "512x512", type: "image/png" },
-      { url: "/icon.svg", type: "image/svg+xml" },
-    ],
-    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
-    shortcut: ["/favicon.png"],
   },
 }
 
@@ -107,6 +112,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className={`font-sans antialiased ${inter.className}`}>
+        <noscript>
+          <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -126,7 +134,7 @@ export default function RootLayout({
             gtag('config', 'G-J5E9PEGV07');
           `}
         </Script>
-        {children}
+        <ContactModalProvider>{children}</ContactModalProvider>
         <BackToTop />
         <Analytics />
       </body>

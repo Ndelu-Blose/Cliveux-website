@@ -1,14 +1,13 @@
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
+import { Problem } from "@/components/problem"
 import { Services } from "@/components/services"
-import { PreQualification } from "@/components/pre-qualification"
-import { Packages } from "@/components/packages"
-import { PricingFAQ } from "@/components/pricing-faq"
-import { SocialProof } from "@/components/social-proof"
+import { SmmeFocus } from "@/components/smme-focus"
+import { Journey } from "@/components/journey"
+import { Work } from "@/components/work"
+import { WhyCliveux } from "@/components/why-cliveux"
 import { Approach } from "@/components/approach"
-import { Experience } from "@/components/experience"
 import { ContactCard } from "@/components/contact-card"
-import { CTA } from "@/components/cta"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
@@ -17,15 +16,14 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Problem />
         <Services />
-        <PreQualification />
-        <Packages />
-        <PricingFAQ />
-        <SocialProof />
+        <SmmeFocus />
+        <Journey />
+        <Work />
+        <WhyCliveux />
         <Approach />
-        <Experience />
         <ContactCard />
-        <CTA />
       </main>
       <Footer />
     </>

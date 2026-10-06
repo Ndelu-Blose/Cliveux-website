@@ -3,7 +3,8 @@ import { Footer } from "@/components/footer"
 
 export const metadata = {
   title: "Terms of Service",
-  description: "Terms of Service for CliveUX - Digital Innovation Studio",
+  description: "Terms of Service for CliveUX, digital solutions for South African SMMEs",
+  alternates: { canonical: "/terms" },
 }
 
 export default function TermsPage() {
@@ -11,12 +12,12 @@ export default function TermsPage() {
     <>
       <Header />
       <main>
-        <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8">
+        <section className="px-4 pb-16 pt-[calc(var(--header-height)+3rem)] sm:px-6 sm:pb-20 sm:pt-[calc(var(--header-height)+4rem)] md:pb-28 lg:px-8">
           <div className="mx-auto max-w-4xl">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight mb-6 sm:mb-8">Terms of Service</h1>
             
             <div className="prose prose-sm max-w-none text-muted-foreground space-y-6">
-              <p className="text-sm text-muted-foreground">Last updated: {new Date().getFullYear()}</p>
+              <p className="text-sm text-muted-foreground">Last updated: 6 October 2026</p>
 
               <section>
                 <h2 className="text-2xl font-semibold text-foreground mt-8 mb-4">1. Agreement to Terms</h2>

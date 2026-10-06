@@ -1,18 +1,18 @@
 "use client"
 
-import { useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
-import ContactModal from "@/components/ContactModal"
+import { useContactModal } from "@/components/contact-modal-provider"
 import { AnimateOnScroll, AnimateOnScrollStagger } from "@/components/animate-on-scroll"
-import type { PackageKey } from "@/content/packages"
+import { packages as stages, type PackageKey } from "@/content/packages"
+
+const stageByKey = Object.fromEntries(stages.map((stage) => [stage.key, stage]))
 
 const packages = [
   {
     number: "01",
-    name: "Starter Website",
-    tagline: "For new businesses that need a clean online presence fast.",
+    key: "Package 1" as PackageKey,
     delivery: "5–7 days",
     features: [
       "1–3 pages (Home, About, Services/Contact)",
@@ -25,8 +25,7 @@ const packages = [
   },
   {
     number: "02",
-    name: "Business Website",
-    tagline: "For growing businesses that need credibility + lead generation.",
+    key: "Package 2" as PackageKey,
     delivery: "7–14 days",
     popular: true,
     features: [
@@ -38,26 +37,17 @@ const packages = [
       "On-page SEO (better structure + headings)",
       "Hosting + domain management included",
     ],
-  },
-  {
-    number: "03",
-    name: "Pro Website + Growth",
-    tagline: "For brands that need advanced features + marketing readiness.",
-    delivery: "2–3 weeks",
-    features: [
-      "8–12 pages (or custom layout)",
-      "Blog or Updates section (optional)",
-      "Advanced forms (multi-step quote form)",
-      "Basic analytics setup (traffic + conversions)",
-      "Speed optimisation + image optimisation",
-      "1–2 design revision rounds (structured)",
-      "Hosting + domain management included",
+    canInclude: [
+      "More pages or a custom layout",
+      "Blog or updates section",
+      "Multi-step quote forms",
+      "Analytics (traffic + enquiries)",
+      "Speed + image optimisation",
     ],
   },
   {
-    number: "04",
-    name: "Business System / Custom Web App",
-    tagline: "For businesses needing automation (bookings, tracking, dashboards, CRM-lite).",
+    number: "03",
+    key: "Package 3" as PackageKey,
     delivery: "3–6+ weeks",
     features: [
       "Requirements + workflow planning",
@@ -68,7 +58,24 @@ const packages = [
       "Hosting + domain management included",
     ],
   },
-]
+  {
+    number: "04",
+    key: "Package 4" as PackageKey,
+    delivery: "Scoped per project",
+    features: [
+      "Discovery session to map your workflow",
+      "Integrations with tools you already use",
+      "Custom applications, portals or internal tools",
+      "Phased delivery with milestone payments",
+      "Hosting + domain management included",
+    ],
+  },
+].map((pkg) => ({
+  ...pkg,
+  name: stageByKey[pkg.key].title,
+  headline: stageByKey[pkg.key].headline,
+  tagline: stageByKey[pkg.key].forWho,
+}))
 
 const includedInAll = [
   "Hosting + domain management",
@@ -89,35 +96,20 @@ const addons = [
 ]
 
 export function Packages() {
-  const [open, setOpen] = useState(false)
-  const [selectedPackage, setSelectedPackage] = useState<PackageKey>("Package 2")
-
-  const packageKeyMap: Record<string, PackageKey> = {
-    "01": "Package 1",
-    "02": "Package 2",
-    "03": "Package 3",
-    "04": "Package 4",
-  }
-
-  const handleGetStarted = (pkgNumber: string) => {
-    const packageKey = packageKeyMap[pkgNumber] || "Package 2"
-    setSelectedPackage(packageKey)
-    setOpen(true)
-  }
+  const { openContact } = useContactModal()
 
   return (
-    <>
       <section id="packages" className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <AnimateOnScroll direction="up">
           <div className="mb-12 sm:mb-16 max-w-2xl">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight mb-4 sm:mb-6 text-balance">
-              Choose your
-              <span className="block text-accent font-normal">package</span>
+              Start, grow,
+              <span className="block text-accent font-normal">then operate</span>
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Clear pricing, fast delivery, and everything you need to get online. All packages include hosting and domain
-              management.
+              Pick the stage that matches your business today. You can move up as you grow, and every stage includes
+              hosting and domain management.
             </p>
           </div>
         </AnimateOnScroll>
@@ -137,12 +129,13 @@ export function Packages() {
                   Most Popular
                 </div>
               )}
-              <div className="text-sm text-accent font-semibold mb-2">{pkg.number}</div>
-              <h3 className="text-2xl font-semibold mb-2">{pkg.name}</h3>
+              <div className="text-sm text-accent-text font-semibold mb-2">{pkg.number}</div>
+              <h3 className="text-2xl font-semibold mb-1">{pkg.name}</h3>
+              <p className="font-medium mb-2">{pkg.headline}</p>
               <p className="text-sm text-muted-foreground mb-4">{pkg.tagline}</p>
               <div className="mb-6 pb-6 border-b border-border">
                 <div className="text-sm text-muted-foreground">Typical delivery</div>
-                <div className="text-lg font-semibold text-accent">{pkg.delivery}</div>
+                <div className="text-lg font-semibold text-accent-text">{pkg.delivery}</div>
               </div>
               <ul className="space-y-3 mb-8">
                 {pkg.features.map((feature) => (
@@ -152,13 +145,19 @@ export function Packages() {
                   </li>
                 ))}
               </ul>
+              {pkg.canInclude && (
+                <div className="mb-8 -mt-2">
+                  <p className="text-sm font-medium mb-2">Can include when you need it:</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{pkg.canInclude.join(" · ")}</p>
+                </div>
+              )}
               <Button
                 className="w-full"
                 variant={pkg.popular ? "brand" : "brandOutline"}
                 size="lg"
-                onClick={() => handleGetStarted(pkg.number)}
+                onClick={() => openContact(pkg.key)}
               >
-                Get a Quote
+                Start a Project
               </Button>
               </Card>
           ))}
@@ -169,7 +168,7 @@ export function Packages() {
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
               <div>
                 <h3 className="text-lg font-semibold mb-5">
-                  Included in every package
+                  Included at every stage
                 </h3>
                 <ul className="space-y-3">
                   {includedInAll.map((item) => (
@@ -184,7 +183,7 @@ export function Packages() {
               <div>
                 <h3 className="text-lg font-semibold mb-2">Add-ons</h3>
                 <p className="text-sm text-muted-foreground mb-5">
-                  Optional extras you can add to any package.
+                  Optional extras you can add at any stage.
                 </p>
                 <ul className="space-y-3">
                   {addons.map((addon) => (
@@ -203,7 +202,5 @@ export function Packages() {
         </AnimateOnScroll>
       </div>
     </section>
-    <ContactModal open={open} onClose={() => setOpen(false)} defaultPackage={selectedPackage} />
-    </>
   )
 }
