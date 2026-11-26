@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { FooterSocialIcons } from "@/components/social-links"
 import { EMAIL } from "@/lib/contact"
+import { serviceHref, services } from "@/content/services"
 
 const footerLinkClass =
   "text-white/60 hover:text-accent transition-colors focus-visible:outline-none focus-visible:text-accent"
@@ -28,21 +29,13 @@ export function Footer() {
             <div>
               <h3 className="font-semibold mb-4 text-sm text-white">Solutions</h3>
               <ul className="space-y-2.5 text-sm">
-                <li>
-                  <Link href="/#websites" className={footerLinkClass}>
-                    Websites
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/#business-systems" className={footerLinkClass}>
-                    Business Systems
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/#digital-support" className={footerLinkClass}>
-                    Digital Support
-                  </Link>
-                </li>
+                {services.map((service) => (
+                  <li key={service.id}>
+                    <Link href={serviceHref(service)} className={footerLinkClass}>
+                      {service.shortTitle}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -52,16 +45,6 @@ export function Footer() {
                 <li>
                   <Link href="/#about" className={footerLinkClass}>
                     About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/#work" className={footerLinkClass}>
-                    Work
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/pricing" className={footerLinkClass}>
-                    Pricing
                   </Link>
                 </li>
                 <li>

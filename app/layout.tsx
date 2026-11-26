@@ -7,6 +7,7 @@ import { BackToTop } from "@/components/back-to-top"
 import { ContactModalProvider } from "@/components/contact-modal-provider"
 import { EMAIL } from "@/lib/contact"
 import { SOCIAL_PLATFORMS } from "@/lib/social-links"
+import { serviceTitles } from "@/content/services"
 import "./globals.css"
 
 const organizationJsonLd = {
@@ -14,7 +15,7 @@ const organizationJsonLd = {
   "@type": "ProfessionalService",
   name: "CliveUX",
   description:
-    "Websites, business systems and digital support for South African SMMEs.",
+    "Websites, business email, business systems and digital support for South African SMMEs.",
   url: "https://cliveux.co.za",
   logo: "https://cliveux.co.za/cx-logo.png",
   image: "https://cliveux.co.za/opengraph-image",
@@ -26,11 +27,20 @@ const organizationJsonLd = {
     addressCountry: "ZA",
   },
   areaServed: { "@type": "Country", name: "South Africa" },
-  knowsAbout: ["Website design", "Business systems", "Website hosting and maintenance", "SEO"],
+  knowsAbout: [
+    "Website design",
+    "Business email",
+    "Microsoft 365 setup",
+    "Google Workspace setup",
+    "Zoho Workplace setup",
+    "Business systems",
+    "Website hosting and maintenance",
+    "SEO",
+  ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "CliveUX solutions",
-    itemListElement: ["Websites", "Business Systems", "Digital Support"].map((name) => ({
+    itemListElement: serviceTitles.map((name) => ({
       "@type": "Offer",
       itemOffered: { "@type": "Service", name },
     })),
@@ -52,7 +62,7 @@ export const metadata: Metadata = {
     template: "%s | CliveUX"
   },
   description:
-    "CliveUX helps South African SMMEs build a stronger digital presence, streamline everyday work and create systems that support growth. Websites, business systems and digital support. Based in Durban.",
+    "CliveUX helps South African SMMEs build a stronger digital presence, streamline everyday work and create systems that support growth. Websites, business email, business systems and digital support. Based in Durban.",
   keywords: [
     "SMME websites",
     "small business website South Africa",
@@ -62,6 +72,11 @@ export const metadata: Metadata = {
     "booking system South Africa",
     "website hosting and maintenance",
     "Google Business Profile setup",
+    "business email South Africa",
+    "professional email address",
+    "Microsoft 365 setup",
+    "Google Workspace setup",
+    "Zoho Mail",
     "KwaZulu-Natal",
     "South Africa",
   ],

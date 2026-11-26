@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Clock, MapPin } from "lucide-react";
+import { ArrowRight, Clock, Mail, MapPin } from "lucide-react";
 import type { ComponentType } from "react";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { StartProjectButton } from "@/components/contact-modal-provider";
@@ -11,18 +11,9 @@ import { SocialLinks, WhatsAppIcon } from "@/components/social-links";
 import { EMAIL, whatsappUrl } from "@/lib/contact";
 import { cn } from "@/lib/utils";
 
-function GmailIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className={className}
-      aria-hidden
-    >
-      <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" />
-    </svg>
-  );
-}
+const emailHref = `mailto:${EMAIL}?subject=${encodeURIComponent(
+  "Website enquiry — cliveux.co.za"
+)}&body=${encodeURIComponent("Hi CliveUX,\n\nI found you on your website and I'd like to chat about my business.\n\n")}`;
 
 const primaryChannels: {
   id: string;
@@ -53,12 +44,12 @@ const primaryChannels: {
     title: "Email",
     description: "Best for detailed briefs, quotes and attachments.",
     action: "Send an email",
-    href: `mailto:${EMAIL}`,
+    href: emailHref,
     external: false,
-    ariaLabel: "Send an email to CliveUX",
-    icon: GmailIcon,
-    brandColor: "#EA4335",
-    iconBg: "bg-[#EA4335]/10",
+    ariaLabel: `Send an email to CliveUX at ${EMAIL}`,
+    icon: Mail,
+    brandColor: "var(--accent-text)",
+    iconBg: "bg-accent/10",
   },
 ];
 
@@ -95,7 +86,7 @@ export function ContactCard() {
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <StartProjectButton size="lg" className="sm:min-w-[180px]" />
               <Button size="lg" variant="brandOutline" asChild className="sm:min-w-[180px]">
-                <Link href="/pricing">View Pricing</Link>
+                <Link href="/packages">View Packages</Link>
               </Button>
             </div>
           </div>

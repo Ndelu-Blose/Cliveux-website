@@ -1,5 +1,6 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { EMAIL, WHATSAPP_DISPLAY } from "@/lib/contact"
 
 export const metadata = {
   title: "Terms of Service",
@@ -67,8 +68,8 @@ export default function TermsPage() {
                   If you have questions about these Terms of Service, please contact us at:
                 </p>
                 <p>
-                  Email: cliveuxweb@gmail.com<br />
-                  WhatsApp: +27 60 725 7297
+                  Email: {EMAIL}<br />
+                  WhatsApp: {WHATSAPP_DISPLAY}
                 </p>
               </section>
             </div>
