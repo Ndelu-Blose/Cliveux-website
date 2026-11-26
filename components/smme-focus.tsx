@@ -1,20 +1,34 @@
 "use client";
 
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import {
+  ArrowRight,
+  CalendarCheck,
+  Globe,
+  LayoutDashboard,
+  Mail,
+  MessageCircle,
+  Search,
+  Workflow,
+  type LucideIcon,
+} from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { useContactModal } from "@/components/contact-modal-provider"
 import { AnimateOnScroll, AnimateOnScrollStagger } from "@/components/animate-on-scroll"
+import { cn } from "@/lib/utils"
 
-const needs: { text: string; href?: string }[] = [
-  { text: "A website that makes your business look credible" },
-  { text: "A way for customers to contact you easily" },
-  { text: "Better visibility on Google" },
-  { text: "Online bookings or enquiries" },
-  { text: "A system to manage your day-to-day operations" },
-  { text: "A professional domain and business email", href: "/business-email" },
-  { text: "Less work being done manually" },
+const needs: { text: string; icon: LucideIcon; href?: string }[] = [
+  { text: "A website that makes your business look credible", icon: Globe },
+  { text: "A way for customers to contact you easily", icon: MessageCircle },
+  { text: "Better visibility on Google", icon: Search },
+  { text: "Online bookings or enquiries", icon: CalendarCheck },
+  { text: "A system to manage your day-to-day operations", icon: LayoutDashboard },
+  { text: "A professional domain and business email", icon: Mail, href: "/business-email" },
+  { text: "Less work being done manually", icon: Workflow },
 ]
+
+const needTile =
+  "flex h-full items-start gap-3 rounded-lg border border-border/70 bg-card p-4 text-sm leading-snug text-foreground/80"
 
 const paths = [
   {
@@ -53,7 +67,7 @@ export function SmmeFocus() {
           <AnimateOnScroll direction="up">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight mb-4 sm:mb-6 text-balance">
               Built around the realities of
-              <span className="block text-accent font-normal">running an SMME</span>
+              <span className="block text-accent-display font-normal">running an SMME</span>
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               You don&apos;t need a massive IT department to have good technology. Built for businesses that are
@@ -66,24 +80,48 @@ export function SmmeFocus() {
 
           <AnimateOnScroll direction="up" delay={120}>
             <p className="font-semibold mb-5">You might simply need:</p>
-            <ul className="space-y-3">
-              {needs.map((need) => (
-                <li key={need.text} className="flex items-start gap-3 text-muted-foreground">
-                  <span className="mt-2.5 h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
-                  {need.href ? (
-                    <Link
-                      href={need.href}
-                      className="underline decoration-accent/60 underline-offset-4 transition-colors hover:text-foreground hover:decoration-accent"
-                    >
-                      {need.text}
-                    </Link>
-                  ) : (
-                    <span>{need.text}</span>
-                  )}
-                </li>
-              ))}
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {needs.map((need) => {
+                const Icon = need.icon
+                const content = (
+                  <>
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-accent/10 text-accent-text">
+                      <Icon className="h-[18px] w-[18px]" aria-hidden="true" />
+                    </span>
+                    <span className="pt-2">{need.text}</span>
+                  </>
+                )
+                return (
+                  <li key={need.text}>
+                    {need.href ? (
+                      <Link
+                        href={need.href}
+                        className={cn(
+                          needTile,
+                          "transition-colors hover:border-accent/60 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                        )}
+                      >
+                        {content}
+                      </Link>
+                    ) : (
+                      <div className={needTile}>{content}</div>
+                    )}
+                  </li>
+                )
+              })}
+              <li>
+                <Link
+                  href="#solutions"
+                  className="group flex h-full min-h-[4.25rem] items-center justify-between gap-3 rounded-lg bg-foreground p-4 text-sm font-semibold text-background transition-colors hover:bg-foreground/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                >
+                  That&apos;s where CliveUX comes in.
+                  <ArrowRight
+                    className="h-4 w-4 shrink-0 text-accent transition-transform group-hover:translate-x-0.5"
+                    aria-hidden="true"
+                  />
+                </Link>
+              </li>
             </ul>
-            <p className="mt-6 font-semibold">That&apos;s where CliveUX comes in.</p>
           </AnimateOnScroll>
         </div>
 

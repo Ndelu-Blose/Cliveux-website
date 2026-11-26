@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { FooterSocialIcons } from "@/components/social-links"
-import { EMAIL } from "@/lib/contact"
+import { EMAIL, LEGAL_NAME, REGISTRATION_NUMBER } from "@/lib/contact"
 import { serviceHref, services } from "@/content/services"
 
 const footerLinkClass =
@@ -84,6 +84,9 @@ export function Footer() {
 
               <div className="space-y-1.5 text-sm text-white/55">
                 <p>&copy; {currentYear} CliveUX. All rights reserved.</p>
+                <p className="text-xs text-white/35">
+                  {LEGAL_NAME} · Reg. No. {REGISTRATION_NUMBER}
+                </p>
                 <p className="text-xs text-white/35">
                   Based in Durban, KwaZulu-Natal · Serving businesses across South Africa
                 </p>

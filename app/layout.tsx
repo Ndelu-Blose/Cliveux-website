@@ -5,7 +5,7 @@ import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { BackToTop } from "@/components/back-to-top"
 import { ContactModalProvider } from "@/components/contact-modal-provider"
-import { EMAIL } from "@/lib/contact"
+import { EMAIL, LEGAL_NAME, REGISTRATION_NUMBER } from "@/lib/contact"
 import { SOCIAL_PLATFORMS } from "@/lib/social-links"
 import { serviceTitles } from "@/content/services"
 import "./globals.css"
@@ -14,6 +14,12 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "CliveUX",
+  legalName: LEGAL_NAME,
+  identifier: {
+    "@type": "PropertyValue",
+    propertyID: "CIPC registration number",
+    value: REGISTRATION_NUMBER,
+  },
   description:
     "Websites, business email, business systems and digital support for South African SMMEs.",
   url: "https://cliveux.co.za",

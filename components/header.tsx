@@ -5,7 +5,10 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu } from "lucide-react"
-import { StartProjectButton, useContactModal } from "@/components/contact-modal-provider"
+import { useContactModal } from "@/components/contact-modal-provider"
+import { WhatsAppIcon } from "@/components/social-links"
+import { whatsappUrl } from "@/lib/contact"
+import { track } from "@/lib/analytics"
 import {
   Sheet,
   SheetContent,
@@ -42,7 +45,8 @@ export function Header() {
 
   return (
       <header className={cn(
-        "fixed top-0 left-0 right-0 z-50 border-b bg-background/80 backdrop-blur-sm transition-all duration-300",
+        // Near-opaque so large headlines scrolling underneath don't show through as a grey smudge.
+        "fixed top-0 left-0 right-0 z-50 border-b bg-background/95 backdrop-blur-md transition-all duration-300",
         scrolled ? "border-border/60 shadow-sm" : "border-border/40"
       )}>
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
@@ -78,8 +82,20 @@ export function Header() {
               ))}
             </nav>
 
-            <div className="flex items-center justify-end gap-3 sm:gap-4">
-              <StartProjectButton size="sm" className="hidden sm:inline-flex" />
+            {/* col-start-3 keeps this on the right when the centre nav is hidden below lg. */}
+            <div className="col-start-3 flex items-center justify-end gap-3 sm:gap-4">
+              {/* Secondary action: the hero and page sections carry "Start a Project". */}
+              <Button asChild size="sm" variant="brandOutline" className="hidden sm:inline-flex">
+                <a
+                  href={whatsappUrl()}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => track("header_whatsapp_click")}
+                >
+                  <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
+                  WhatsApp us
+                </a>
+              </Button>
 
               <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
                 <SheetTrigger asChild className="lg:hidden">

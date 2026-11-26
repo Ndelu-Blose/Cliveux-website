@@ -110,7 +110,7 @@ export default function BusinessEmailPage() {
             <p className={eyebrow}>Business Email &amp; Workspace</p>
             <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-light tracking-tight mb-4 sm:mb-6 text-balance">
               Your business deserves more
-              <span className="block text-accent font-normal">than a free email address.</span>
+              <span className="block text-accent-display font-normal">than a free email address.</span>
             </h1>
             <p className="mx-auto max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 sm:mb-10 text-pretty px-2">
               Professional business email, connected to your domain and managed with the right tools for your
@@ -137,7 +137,7 @@ export default function BusinessEmailPage() {
               <p className={eyebrow}>Why it matters</p>
               <h2 className={h2}>
                 Give your business a more
-                <span className="block text-accent font-normal">professional way to work</span>
+                <span className="block text-accent-display font-normal">professional way to work</span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 CliveUX helps small businesses choose, configure and manage the right email and productivity tools.
@@ -165,7 +165,7 @@ export default function BusinessEmailPage() {
                 <p className={eyebrow}>What we take care of</p>
                 <h2 className={h2}>
                   Everything your business needs
-                  <span className="block text-accent font-normal">to communicate professionally</span>
+                  <span className="block text-accent-display font-normal">to communicate professionally</span>
                 </h2>
               </div>
             </AnimateOnScroll>
@@ -193,7 +193,7 @@ export default function BusinessEmailPage() {
                 <p className={eyebrow}>Platforms</p>
                 <h2 className={h2}>
                   Choose the workspace
-                  <span className="block text-accent font-normal">that works for you</span>
+                  <span className="block text-accent-display font-normal">that works for you</span>
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   We work with established platforms and help you choose one based on your team size, budget and
@@ -252,7 +252,7 @@ export default function BusinessEmailPage() {
                 <p className={eyebrow}>Getting started</p>
                 <h2 className={h2}>
                   From free address to
-                  <span className="block text-accent font-normal">professional workspace</span>
+                  <span className="block text-accent-display font-normal">professional workspace</span>
                 </h2>
               </div>
             </AnimateOnScroll>

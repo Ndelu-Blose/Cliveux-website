@@ -21,6 +21,9 @@
   --accent-foreground: oklch(0.1 0 0);
   /* Darker gold for small text on light backgrounds (≥4.5:1 on white) */
   --accent-text: oklch(0.52 0.11 80);
+  /* Deeper gold for large headline text on light backgrounds (#a17003, ~4.4:1 on white).
+     The bright --accent is only 2.25:1 on white, so keep it for fills, icons and dark sections. */
+  --accent-display: oklch(0.58 0.12 78);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(1 0 0);
   --border: oklch(0.9 0 0);
@@ -60,6 +63,7 @@
   --accent: oklch(0.75 0.15 85); /* Gold accent */
   --accent-foreground: oklch(0.1 0 0);
   --accent-text: oklch(0.75 0.15 85);
+  --accent-display: oklch(0.75 0.15 85);
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.25 0 0);
@@ -98,6 +102,7 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent-text: var(--accent-text);
+  --color-accent-display: var(--accent-display);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);

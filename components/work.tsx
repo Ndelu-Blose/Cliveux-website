@@ -34,7 +34,7 @@ export function Work() {
             <p className="text-xs font-medium uppercase tracking-[0.22em] text-accent-text mb-3">Trusted by</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight mb-4 sm:mb-6 text-balance">
               Real businesses.
-              <span className="block text-accent font-normal">Real problems. Real solutions.</span>
+              <span className="block text-accent-display font-normal">Real problems. Real solutions.</span>
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
               A few of the South African businesses we&apos;ve worked with.

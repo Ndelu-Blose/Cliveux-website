@@ -49,7 +49,7 @@ export default function PackagesPage() {
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-light tracking-tight mb-4 sm:mb-6 text-balance">
               Start where you are.
-              <span className="block text-accent font-normal">Grow from there.</span>
+              <span className="block text-accent-display font-normal">Grow from there.</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed mb-6 sm:mb-8 text-pretty px-2">
               Get online, turn your website into a business tool, then build the system behind the business. Every stage

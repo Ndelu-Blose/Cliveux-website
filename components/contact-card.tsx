@@ -76,7 +76,7 @@ export function ContactCard() {
             </p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight mb-4 sm:mb-5 text-balance">
               Your business has enough to worry about.
-              <span className="block text-accent font-normal">
+              <span className="block text-accent-display font-normal">
                 Let&apos;s make the digital side simpler.
               </span>
             </h2>

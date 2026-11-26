@@ -14,7 +14,7 @@ export function Services() {
           <div className="mb-12 sm:mb-16 max-w-2xl">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight mb-4 sm:mb-6 text-balance">
               Four ways we
-              <span className="block text-accent font-normal">help your business</span>
+              <span className="block text-accent-display font-normal">help your business</span>
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Get online properly, communicate professionally, make everyday work simpler, and keep it all running
