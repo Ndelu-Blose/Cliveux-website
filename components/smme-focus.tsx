@@ -3,6 +3,7 @@
 import Link from "next/link"
 import {
   ArrowRight,
+  ArrowUpRight,
   CalendarCheck,
   Globe,
   LayoutDashboard,
@@ -22,13 +23,16 @@ const needs: { text: string; icon: LucideIcon; href?: string }[] = [
   { text: "A way for customers to contact you easily", icon: MessageCircle },
   { text: "Better visibility on Google", icon: Search },
   { text: "Online bookings or enquiries", icon: CalendarCheck },
-  { text: "A system to manage your day-to-day operations", icon: LayoutDashboard },
+  // Non-breaking hyphens (U+2011) stop "day-to-day" splitting across lines.
+  { text: "A system to manage your day‑to‑day operations", icon: LayoutDashboard },
   { text: "A professional domain and business email", icon: Mail, href: "/business-email" },
   { text: "Less work being done manually", icon: Workflow },
 ]
 
+// Every tile is the same height (auto-rows-fr on the grid) with icon and text centred,
+// so one- and two-line items line up instead of leaving a ragged grid.
 const needTile =
-  "flex h-full items-start gap-3 rounded-lg border border-border/70 bg-card p-4 text-sm leading-snug text-foreground/80"
+  "flex h-full min-h-[4.5rem] items-center gap-3.5 rounded-xl border border-border/70 bg-card px-4 py-3 text-sm leading-snug text-foreground/80 text-pretty"
 
 const paths = [
   {
@@ -80,15 +84,15 @@ export function SmmeFocus() {
 
           <AnimateOnScroll direction="up" delay={120}>
             <p className="font-semibold mb-5">You might simply need:</p>
-            <ul className="grid gap-3 sm:grid-cols-2">
+            <ul className="grid gap-3 sm:grid-cols-2 sm:auto-rows-fr">
               {needs.map((need) => {
                 const Icon = need.icon
                 const content = (
                   <>
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-accent/10 text-accent-text">
-                      <Icon className="h-[18px] w-[18px]" aria-hidden="true" />
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent-text ring-1 ring-inset ring-accent/20">
+                      <Icon className="h-[18px] w-[18px]" strokeWidth={1.75} aria-hidden="true" />
                     </span>
-                    <span className="pt-2">{need.text}</span>
+                    <span>{need.text}</span>
                   </>
                 )
                 return (
@@ -98,10 +102,15 @@ export function SmmeFocus() {
                         href={need.href}
                         className={cn(
                           needTile,
-                          "transition-colors hover:border-accent/60 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                          "group transition-[border-color,box-shadow,color] duration-200 hover:border-accent/60 hover:text-foreground hover:shadow-[0_8px_24px_-16px_rgba(0,0,0,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                         )}
                       >
                         {content}
+                        {/* Only this tile is a link, so show it at rest, not just on hover. */}
+                        <ArrowUpRight
+                          className="ml-auto h-4 w-4 shrink-0 self-start text-accent-text/70 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent-text"
+                          aria-hidden="true"
+                        />
                       </Link>
                     ) : (
                       <div className={needTile}>{content}</div>
@@ -112,13 +121,15 @@ export function SmmeFocus() {
               <li>
                 <Link
                   href="#solutions"
-                  className="group flex h-full min-h-[4.25rem] items-center justify-between gap-3 rounded-lg bg-foreground p-4 text-sm font-semibold text-background transition-colors hover:bg-foreground/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  className="group flex h-full min-h-[4.5rem] items-center justify-between gap-3 rounded-xl bg-foreground px-4 py-3 text-sm font-semibold text-background transition-colors hover:bg-foreground/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                 >
                   That&apos;s where CliveUX comes in.
-                  <ArrowRight
-                    className="h-4 w-4 shrink-0 text-accent transition-transform group-hover:translate-x-0.5"
-                    aria-hidden="true"
-                  />
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-accent/40 text-accent transition-colors group-hover:bg-accent group-hover:text-foreground">
+                    <ArrowRight
+                      className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                      aria-hidden="true"
+                    />
+                  </span>
                 </Link>
               </li>
             </ul>
