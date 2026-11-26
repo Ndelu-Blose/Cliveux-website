@@ -131,7 +131,7 @@ export default function ContactModal({ open, onClose, defaultPackage, defaultSer
                   Contact
                 </p>
                 <Dialog.Title className="mt-2 text-3xl font-light tracking-tight">
-                  Start a <span className="font-normal text-accent">project</span>
+                  Start a <span className="font-normal text-accent-display">project</span>
                 </Dialog.Title>
                 <Dialog.Description
                   id="contact-modal-description"

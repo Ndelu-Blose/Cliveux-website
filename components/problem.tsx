@@ -2,28 +2,25 @@
 
 import { AnimateOnScroll } from "@/components/animate-on-scroll"
 
-const lines = [
-  "Your website shouldn't be.",
-  "Your systems shouldn't be.",
-  "Your technology shouldn't be another thing to worry about.",
-]
-
+/**
+ * Bridge between the hero and the services: names the visitor's situation in one
+ * plain paragraph instead of stacked slogan lines, then hands over to "Solutions".
+ */
 export function Problem() {
   return (
-    <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-4xl text-center">
-        <AnimateOnScroll direction="up">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight mb-8 sm:mb-10 text-balance">
+    <section className="border-t border-border/60 px-4 py-14 sm:px-6 sm:py-16 md:py-20 lg:px-8">
+      <AnimateOnScroll direction="up">
+        <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] md:items-end md:gap-14">
+          <h2 className="text-balance text-3xl font-light tracking-tight sm:text-4xl md:text-[2.75rem] md:leading-[1.1]">
             Running a small business is
-            <span className="block text-accent font-normal">already complicated</span>
+            <span className="block font-normal text-accent-display">already complicated.</span>
           </h2>
-          <div className="space-y-2 text-lg sm:text-xl text-muted-foreground leading-relaxed">
-            {lines.map((line) => (
-              <p key={line}>{line}</p>
-            ))}
-          </div>
-        </AnimateOnScroll>
-      </div>
+          <p className="max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground md:pb-1.5">
+            Your website, email and everyday systems shouldn&apos;t add to it. We set them up properly and keep them
+            running, so technology is one less thing on your plate.
+          </p>
+        </div>
+      </AnimateOnScroll>
     </section>
   )
 }

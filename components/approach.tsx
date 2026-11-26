@@ -33,7 +33,7 @@ export function Approach() {
           <div className="mb-12 sm:mb-16 text-center max-w-2xl mx-auto">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight mb-4 sm:mb-6 text-balance">
               How working with
-              <span className="block text-accent font-normal">CliveUX works</span>
+              <span className="block text-accent-display font-normal">CliveUX works</span>
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
               A simple, straightforward process from first message to launch.

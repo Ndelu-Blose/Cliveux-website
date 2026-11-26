@@ -53,7 +53,7 @@ export function SmmeFocus() {
           <AnimateOnScroll direction="up">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight mb-4 sm:mb-6 text-balance">
               Built around the realities of
-              <span className="block text-accent font-normal">running an SMME</span>
+              <span className="block text-accent-display font-normal">running an SMME</span>
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               You don&apos;t need a massive IT department to have good technology. Built for businesses that are
