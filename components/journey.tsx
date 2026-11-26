@@ -36,7 +36,7 @@ export function Journey() {
         <AnimateOnScroll direction="up">
           <div className="flex flex-col sm:flex-row sm:items-center gap-4">
             <Button size="lg" variant="brandOutline" asChild>
-              <Link href="/pricing">See packages & pricing</Link>
+              <Link href="/packages">See packages</Link>
             </Button>
             <p className="text-sm text-muted-foreground">
               Something more specific? We also scope custom workflows and applications.
