@@ -1,6 +1,6 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { EMAIL, WHATSAPP_DISPLAY } from "@/lib/contact"
+import { EMAIL, LEGAL_NAME, REGISTRATION_NUMBER, WHATSAPP_DISPLAY } from "@/lib/contact"
 
 export const metadata = {
   title: "Terms of Service",
@@ -23,7 +23,7 @@ export default function TermsPage() {
               <section>
                 <h2 className="text-2xl font-semibold text-foreground mt-8 mb-4">1. Agreement to Terms</h2>
                 <p>
-                  By accessing or using CliveUX's services, you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you may not access our services.
+                  CliveUX is operated by {LEGAL_NAME}, registration number {REGISTRATION_NUMBER}. By accessing or using CliveUX&apos;s services, you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you may not access our services.
                 </p>
               </section>
 
@@ -68,6 +68,7 @@ export default function TermsPage() {
                   If you have questions about these Terms of Service, please contact us at:
                 </p>
                 <p>
+                  {LEGAL_NAME} (Reg. No. {REGISTRATION_NUMBER})<br />
                   Email: {EMAIL}<br />
                   WhatsApp: {WHATSAPP_DISPLAY}
                 </p>

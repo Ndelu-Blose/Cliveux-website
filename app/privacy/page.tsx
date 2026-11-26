@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { EMAIL, WHATSAPP_DISPLAY } from "@/lib/contact"
+import { EMAIL, LEGAL_NAME, REGISTRATION_NUMBER, WHATSAPP_DISPLAY } from "@/lib/contact"
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -26,7 +26,8 @@ export default function PrivacyPage() {
               <section>
                 <h2 className={h2}>1. Introduction</h2>
                 <p>
-                  CliveUX (&quot;we&quot;, &quot;our&quot; or &quot;us&quot;) is a Durban-based business that builds
+                  CliveUX ({LEGAL_NAME}, registration number {REGISTRATION_NUMBER}) (&quot;we&quot;, &quot;our&quot; or
+                  &quot;us&quot;) is a Durban-based business that builds
                   websites, business email, business systems and digital support for South African SMMEs. We respect your privacy and
                   process personal information in line with the Protection of Personal Information Act, 2013
                   (POPIA). This policy explains what we collect, why, and the choices you have.
@@ -129,6 +130,8 @@ export default function PrivacyPage() {
                   For privacy questions or requests, contact the CliveUX information officer:
                 </p>
                 <p>
+                  {LEGAL_NAME} (Reg. No. {REGISTRATION_NUMBER})
+                  <br />
                   Email: <a href={`mailto:${EMAIL}`} className="text-foreground underline underline-offset-4">{EMAIL}</a>
                   <br />
                   WhatsApp: {WHATSAPP_DISPLAY}

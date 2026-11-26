@@ -2,6 +2,10 @@ export const WHATSAPP = "27691383089";
 export const EMAIL = "Thamsanqa@cliveux.co.za";
 export const WHATSAPP_DISPLAY = "+27 69 138 3089";
 
+/** Registered company details (CIPC). */
+export const LEGAL_NAME = "CliveUX (Pty) Ltd";
+export const REGISTRATION_NUMBER = "2026/067703/07";
+
 /**
  * Tag added to the top of every WhatsApp message started from the site,
  * so website enquiries stand out in the inbox. WhatsApp renders *text* as bold.
