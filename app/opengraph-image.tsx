@@ -48,7 +48,7 @@ export default function OpengraphImage() {
             businesses ready to grow
           </div>
           <div style={{ marginTop: 28, fontSize: 28, color: "rgba(255,255,255,0.7)" }}>
-            Websites · Business Systems · Digital Support
+            Websites · Business Email · Business Systems · Digital Support
           </div>
         </div>
 

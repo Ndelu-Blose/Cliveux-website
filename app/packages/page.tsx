@@ -1,17 +1,18 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Packages } from "@/components/packages"
 import { StartProjectButton } from "@/components/contact-modal-provider"
 
 export const metadata: Metadata = {
-  title: "Pricing",
+  title: "Packages",
   description:
     "Start, Grow, Operate or Custom: website and business system packages for South African SMMEs, with hosting, domain management and post-launch support included.",
-  alternates: { canonical: "/pricing" },
+  alternates: { canonical: "/packages" },
 }
 
-const faqs = [
+const faqs: { question: string; answer: string; link?: { href: string; label: string } }[] = [
   {
     question: "How does payment work?",
     answer:
@@ -31,9 +32,15 @@ const faqs = [
     question: "Can I upgrade later?",
     answer: "Absolutely. Start with what you need now and move to the next stage as your business grows.",
   },
+  {
+    question: "Can you set up business email too?",
+    answer:
+      "Yes. We set up professional email on your own domain with Microsoft 365, Google Workspace, Zoho or Titan, and can manage it for you afterwards.",
+    link: { href: "/business-email", label: "Business email & workspace" },
+  },
 ]
 
-export default function PricingPage() {
+export default function PackagesPage() {
   return (
     <>
       <Header />
@@ -61,7 +68,20 @@ export default function PricingPage() {
               {faqs.map((faq) => (
                 <div key={faq.question}>
                   <h3 className="text-lg font-semibold mb-2">{faq.question}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {faq.answer}
+                    {faq.link && (
+                      <>
+                        {" "}
+                        <Link
+                          href={faq.link.href}
+                          className="font-medium text-accent-text underline-offset-4 hover:underline"
+                        >
+                          {faq.link.label} →
+                        </Link>
+                      </>
+                    )}
+                  </p>
                 </div>
               ))}
             </div>

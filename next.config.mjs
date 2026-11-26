@@ -22,6 +22,12 @@ const nextConfig = {
         destination: "/favicon.png",
         permanent: true,
       },
+      // The page lists packages, not prices; keep old links and search results working.
+      {
+        source: "/pricing",
+        destination: "/packages",
+        permanent: true,
+      },
     ]
   },
 }

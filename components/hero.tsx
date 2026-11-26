@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { AnimateOnMount } from "@/components/animate-on-mount"
 import { StartProjectButton } from "@/components/contact-modal-provider"
+import { serviceTagline } from "@/content/services"
 
 export function Hero() {
   return (
@@ -25,7 +26,7 @@ export function Hero() {
               create systems that support growth.
             </p>
             <p className="mt-4 text-sm font-medium tracking-wide text-foreground/80">
-              Websites · Business Systems · Digital Support
+              {serviceTagline}
             </p>
           </AnimateOnMount>
 

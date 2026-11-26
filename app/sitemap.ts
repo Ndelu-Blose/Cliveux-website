@@ -5,7 +5,8 @@ const SITE_URL = "https://cliveux.co.za";
 // Bump lastModified when a page's content meaningfully changes.
 const routes: { path: string; lastModified: string; changeFrequency: "monthly" | "yearly"; priority: number }[] = [
   { path: "", lastModified: "2026-10-06", changeFrequency: "monthly", priority: 1 },
-  { path: "/pricing", lastModified: "2026-10-06", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/business-email", lastModified: "2026-11-26", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/packages", lastModified: "2026-10-06", changeFrequency: "monthly", priority: 0.8 },
   { path: "/privacy", lastModified: "2026-10-06", changeFrequency: "yearly", priority: 0.3 },
   { path: "/terms", lastModified: "2026-10-06", changeFrequency: "yearly", priority: 0.3 },
 ];

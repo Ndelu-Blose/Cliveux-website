@@ -27,7 +27,7 @@ export default function PrivacyPage() {
                 <h2 className={h2}>1. Introduction</h2>
                 <p>
                   CliveUX (&quot;we&quot;, &quot;our&quot; or &quot;us&quot;) is a Durban-based business that builds
-                  websites, business systems and digital support for South African SMMEs. We respect your privacy and
+                  websites, business email, business systems and digital support for South African SMMEs. We respect your privacy and
                   process personal information in line with the Protection of Personal Information Act, 2013
                   (POPIA). This policy explains what we collect, why, and the choices you have.
                 </p>

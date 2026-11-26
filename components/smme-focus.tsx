@@ -6,14 +6,14 @@ import { Card } from "@/components/ui/card"
 import { useContactModal } from "@/components/contact-modal-provider"
 import { AnimateOnScroll, AnimateOnScrollStagger } from "@/components/animate-on-scroll"
 
-const needs = [
-  "A website that makes your business look credible",
-  "A way for customers to contact you easily",
-  "Better visibility on Google",
-  "Online bookings or enquiries",
-  "A system to manage your day-to-day operations",
-  "A professional domain and business email",
-  "Less work being done manually",
+const needs: { text: string; href?: string }[] = [
+  { text: "A website that makes your business look credible" },
+  { text: "A way for customers to contact you easily" },
+  { text: "Better visibility on Google" },
+  { text: "Online bookings or enquiries" },
+  { text: "A system to manage your day-to-day operations" },
+  { text: "A professional domain and business email", href: "/business-email" },
+  { text: "Less work being done manually" },
 ]
 
 const paths = [
@@ -68,9 +68,18 @@ export function SmmeFocus() {
             <p className="font-semibold mb-5">You might simply need:</p>
             <ul className="space-y-3">
               {needs.map((need) => (
-                <li key={need} className="flex items-start gap-3 text-muted-foreground">
+                <li key={need.text} className="flex items-start gap-3 text-muted-foreground">
                   <span className="mt-2.5 h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
-                  <span>{need}</span>
+                  {need.href ? (
+                    <Link
+                      href={need.href}
+                      className="underline decoration-accent/60 underline-offset-4 transition-colors hover:text-foreground hover:decoration-accent"
+                    >
+                      {need.text}
+                    </Link>
+                  ) : (
+                    <span>{need.text}</span>
+                  )}
                 </li>
               ))}
             </ul>

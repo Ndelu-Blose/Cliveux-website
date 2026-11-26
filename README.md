@@ -1,6 +1,6 @@
 # CliveUX
 
-Website for CliveUX, a Durban studio building websites, business systems and digital support for South African SMMEs.
+Website for CliveUX, a Durban studio building websites, business email, business systems and digital support for South African SMMEs.
 
 ## Develop
 
